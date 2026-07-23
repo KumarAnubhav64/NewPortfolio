@@ -1,0 +1,133 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F0F2F6"/>
+  
+  <!-- Main canvas area -->
+  <rect x="180" y="0" width="440" height="500" fill="#EAEBEE"/>
+  
+  <!-- Top toolbar -->
+  <rect x="0" y="0" width="800" height="48" fill="#FFFFFF" border-bottom="1px solid #D7D9DE"/>
+  <rect x="0" y="48" width="800" height="1" fill="#D7D9DE"/>
+  
+  <!-- Toolbar items -->
+  <rect x="16" y="14" width="28" height="20" rx="4" fill="#EAEBEE"/>
+  <rect x="52" y="14" width="28" height="20" rx="4" fill="#EAEBEE"/>
+  <rect x="88" y="14" width="28" height="20" rx="4" fill="#5C7095" opacity="0.15"/>
+  <rect x="124" y="14" width="28" height="20" rx="4" fill="#EAEBEE"/>
+  
+  <rect x="180" y="14" width="1" height="20" fill="#D7D9DE"/>
+  
+  <rect x="196" y="14" width="100" height="20" rx="10" fill="#EAEBEE"/>
+  <rect x="208" y="20" width="50" height="4" rx="2" fill="#C8CBD0"/>
+  
+  <!-- Right toolbar -->
+  <rect x="640" y="14" width="28" height="20" rx="4" fill="#EAEBEE"/>
+  <rect x="676" y="14" width="28" height="20" rx="4" fill="#EAEBEE"/>
+  <rect x="720" y="14" width="28" height="20" rx="4" fill="#5C7095" opacity="0.15"/>
+  <rect x="756" y="14" width="28" height="20" rx="4" fill="#EAEBEE"/>
+  
+  <!-- Left sidebar - layers/tools -->
+  <rect x="0" y="49" width="180" height="451" fill="#FFFFFF"/>
+  <rect x="16" y="68" width="80" height="8" rx="4" fill="#1E2430" opacity="0.6"/>
+  
+  <!-- Layer items -->
+  <rect x="12" y="92" width="156" height="36" rx="8" fill="#5C7095" opacity="0.08"/>
+  <rect x="24" y="104" width="12" height="12" rx="3" fill="#5C7095" opacity="0.4"/>
+  <rect x="44" y="107" width="70" height="6" rx="3" fill="#5C7095" opacity="0.6"/>
+  
+  <rect x="12" y="136" width="156" height="36" rx="8" fill="transparent"/>
+  <rect x="24" y="148" width="12" height="12" rx="3" fill="#C8CBD0"/>
+  <rect x="44" y="151" width="90" height="6" rx="3" fill="#C8CBD0"/>
+  
+  <rect x="12" y="180" width="156" height="36" rx="8" fill="transparent"/>
+  <rect x="24" y="192" width="12" height="12" rx="3" fill="#C8CBD0"/>
+  <rect x="44" y="195" width="60" height="6" rx="3" fill="#C8CBD0"/>
+  
+  <rect x="12" y="224" width="156" height="36" rx="8" fill="transparent"/>
+  <rect x="24" y="236" width="12" height="12" rx="3" fill="#C8CBD0"/>
+  <rect x="44" y="239" width="100" height="6" rx="3" fill="#C8CBD0"/>
+  
+  <!-- Right sidebar - AI panel -->
+  <rect x="620" y="49" width="180" height="451" fill="#FFFFFF"/>
+  <rect x="636" y="68" width="60" height="8" rx="4" fill="#1E2430" opacity="0.6"/>
+  
+  <!-- AI chat header -->
+  <rect x="636" y="88" width="148" height="32" rx="10" fill="#5C7095" opacity="0.08"/>
+  <circle cx="652" cy="104" r="8" fill="#5C7095" opacity="0.2"/>
+  <rect x="668" y="101" width="30" height="6" rx="3" fill="#5C7095" opacity="0.5"/>
+  <circle cx="768" cy="104" r="4" fill="#34C749"/>
+  
+  <!-- AI suggestion bubbles -->
+  <rect x="636" y="132" width="120" height="40" rx="10" fill="#F0F2F6" stroke="#D7D9DE" stroke-width="1"/>
+  <rect x="648" y="144" width="80" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="648" y="156" width="60" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
+  
+  <rect x="636" y="184" width="148" height="48" rx="10" fill="#F0F2F6" stroke="#D7D9DE" stroke-width="1"/>
+  <rect x="648" y="196" width="110" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="648" y="208" width="80" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
+  
+  <rect x="636" y="244" width="100" height="40" rx="10" fill="#F0F2F6" stroke="#D7D9DE" stroke-width="1"/>
+  <rect x="648" y="256" width="60" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="648" y="268" width="40" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
+  
+  <!-- AI input bar -->
+  <rect x="636" y="420" width="148" height="36" rx="18" fill="#EAEBEE"/>
+  <rect x="648" y="432" width="80" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+  <circle cx="760" cy="438" r="10" fill="#5C7095" opacity="0.2"/>
+  <rect x="756" y="435" width="8" height="8" rx="2" fill="#5C7095" opacity="0.5"/>
+  
+  <!-- Canvas content - Node/flow diagram -->
+  <!-- Main flow node -->
+  <rect x="240" y="90" width="160" height="60" rx="14" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="256" y="108" width="60" height="6" rx="3" fill="#1E2430" opacity="0.6"/>
+  <rect x="256" y="120" width="80" height="5" rx="2.5" fill="#C8CBD0"/>
+  <circle cx="380" cy="120" r="8" fill="#5C7095" opacity="0.15"/>
+  
+  <!-- Connecting line -->
+  <line x1="400" y1="120" x2="470" y2="120" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="4 3"/>
+  
+  <!-- AI node -->
+  <rect x="470" y="90" width="140" height="60" rx="14" fill="#FFFFFF" stroke="#5C7095" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="486" y="108" width="50" height="6" rx="3" fill="#5C7095" opacity="0.6"/>
+  <rect x="486" y="120" width="70" height="5" rx="2.5" fill="#C8CBD0"/>
+  <circle cx="592" cy="120" r="8" fill="#5C7095" opacity="0.2"/>
+  
+  <!-- Branch lines -->
+  <line x1="540" y1="150" x2="540" y2="200" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="350" y1="150" x2="350" y2="220" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="4 3"/>
+  
+  <!-- Branch node 1 -->
+  <rect x="280" y="220" width="140" height="50" rx="12" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.03))"/>
+  <rect x="296" y="236" width="60" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="296" y="248" width="40" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+  
+  <!-- Branch node 2 -->
+  <rect x="470" y="200" width="140" height="50" rx="12" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.03))"/>
+  <rect x="486" y="216" width="60" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="486" y="228" width="50" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+  
+  <!-- Connection to bottom node -->
+  <line x1="350" y1="270" x2="350" y2="310" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="540" y1="250" x2="540" y2="310" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="350" y1="310" x2="540" y2="310" stroke="#D7D9DE" stroke-width="1.5"/>
+  
+  <!-- Merge node -->
+  <rect x="320" y="310" width="250" height="55" rx="14" fill="#FFFFFF" stroke="#5C7095" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="340" y="328" width="80" height="6" rx="3" fill="#5C7095" opacity="0.6"/>
+  <rect x="340" y="340" width="60" height="5" rx="2.5" fill="#C8CBD0"/>
+  
+  <!-- Output arrow -->
+  <line x1="445" y1="365" x2="445" y2="400" stroke="#5C7095" stroke-width="1.5"/>
+  <polygon points="441,395 445,405 449,395" fill="#5C7095"/>
+  
+  <!-- Preview thumbnail on canvas -->
+  <rect x="260" y="405" width="160" height="40" rx="10" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1"/>
+  <rect x="276" y="417" width="60" height="6" rx="3" fill="#1E2430" opacity="0.4"/>
+  <rect x="276" y="429" width="40" height="4" rx="2" fill="#C8CBD0"/>
+  <rect x="380" y="417" width="24" height="16" rx="4" fill="#EAEBEE"/>
+  
+  <!-- Sparkle AI indicators -->
+  <circle cx="610" cy="96" r="3" fill="#5C7095" opacity="0.3"/>
+  <circle cx="618" cy="88" r="2" fill="#5C7095" opacity="0.2"/>
+  <circle cx="618" cy="104" r="2" fill="#5C7095" opacity="0.2"/>
+</svg>
