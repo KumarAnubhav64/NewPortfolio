@@ -129,5 +129,13 @@
 		.skills-grid {
 			grid-template-columns: 1fr;
 		}
+
+		.skill-category {
+			padding: 1.25rem;
+		}
+
+		.header-quote {
+			font-size: var(--text-xl);
+		}
 	}
 </style>

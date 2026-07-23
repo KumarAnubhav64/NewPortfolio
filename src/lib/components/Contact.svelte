@@ -129,6 +129,24 @@
 		pointer-events: none;
 	}
 
+	@media (max-width: 768px) {
+		.contact-peep {
+			display: none;
+		}
+
+		.eyebrow-line {
+			width: 32px;
+		}
+
+		.contact-links {
+			gap: 1rem;
+		}
+
+		.contact-description {
+			font-size: var(--text-sm);
+		}
+	}
+
 	.contact-cta {
 		margin-top: 0.5rem;
 	}

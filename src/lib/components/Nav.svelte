@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from './Button.svelte';
+	import { navigateToSection } from '$lib/utils/smoothNavigate';
 
 	let mobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
@@ -12,6 +13,12 @@
 		{ label: 'About', href: '#about' },
 		{ label: 'Contact', href: '#contact' }
 	];
+
+	function handleNavClick(e: MouseEvent, sectionId: string) {
+		e.preventDefault();
+		mobileMenuOpen = false;
+		navigateToSection(sectionId);
+	}
 
 	function closeMenu() {
 		mobileMenuOpen = false;
@@ -68,13 +75,20 @@
 			<span class="toggle-bar" class:toggle-bar--open={mobileMenuOpen}></span>
 		</button>
 
+		{#if mobileMenuOpen}
+			<button
+				class="nav-overlay"
+				onclick={closeMenu}
+				aria-label="Close menu"
+			></button>
+		{/if}
 		<div class="nav-links" class:nav-links--open={mobileMenuOpen}>
 			{#each navLinks as link}
 				<a
 					href={link.href}
 					class="nav-link"
 					class:nav-link--active={activeSection === link.href.slice(1)}
-					onclick={closeMenu}
+					onclick={(e) => handleNavClick(e, link.href.slice(1))}
 				>{link.label}</a>
 			{/each}
 		</div>
@@ -202,6 +216,21 @@
 
 	.toggle-bar--open:last-child {
 		transform: rotate(-45deg) translate(5px, -5px);
+	}
+
+	.nav-overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(30, 36, 48, 0.3);
+		cursor: default;
+		border: none;
+		padding: 0;
+		animation: fadeIn 0.3s var(--ease-out);
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
 	}
 
 	@media (max-width: 768px) {

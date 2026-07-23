@@ -192,4 +192,18 @@
 	.card-link:hover {
 		opacity: 0.7;
 	}
+
+	@media (max-width: 600px) {
+		.card-body {
+			padding: 1.25rem;
+		}
+
+		.card-title {
+			font-size: var(--text-lg);
+		}
+
+		.card-description {
+			font-size: var(--text-xs);
+		}
+	}
 </style>

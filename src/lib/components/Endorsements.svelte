@@ -221,6 +221,12 @@
 		.testimonial-slide {
 			flex: 0 0 calc((100% - 1.5rem) / 2);
 		}
+
+		.carousel-controls {
+			flex-direction: column;
+			gap: 1rem;
+			align-items: center;
+		}
 	}
 
 	@media (max-width: 600px) {

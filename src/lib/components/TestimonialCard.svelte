@@ -60,17 +60,25 @@
 
 	.quote-name {
 		font-family: var(--font-display);
-		font-size: var(--text-lg);
-		font-weight: 500;
+		font-size: var(--text-base);
 		font-style: italic;
 		color: var(--color-ink);
-		letter-spacing: -0.01em;
 	}
 
 	.quote-role {
 		font-family: var(--font-body);
-		font-size: var(--text-sm);
+		font-size: var(--text-xs);
 		color: var(--color-muted);
 		letter-spacing: 0.02em;
+	}
+
+	@media (max-width: 600px) {
+		.testimonial-card {
+			padding: 1.5rem;
+		}
+
+		.quote-text {
+			font-size: var(--text-base);
+		}
 	}
 </style>

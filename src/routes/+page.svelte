@@ -7,6 +7,7 @@
 	import About from '$lib/components/About.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { scrollToTop } from '$lib/utils/smoothNavigate';
 
 	let showBackToTop = $state(false);
 
@@ -17,10 +18,6 @@
 		window.addEventListener('scroll', onScroll, { passive: true });
 		return () => window.removeEventListener('scroll', onScroll);
 	});
-
-	function scrollToTop() {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	}
 </script>
 
 <svelte:head>
@@ -29,12 +26,14 @@
 </svelte:head>
 
 <Nav />
-<Hero />
-<SelectedWork />
-<HowIWork />
-<Skills />
-<About />
-<Contact />
+<div class="page-main">
+	<Hero />
+	<SelectedWork />
+	<HowIWork />
+	<Skills />
+	<About />
+	<Contact />
+</div>
 <Footer />
 
 <button

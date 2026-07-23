@@ -108,6 +108,12 @@
 		pointer-events: none;
 	}
 
+	@media (max-width: 600px) {
+		.about-peep {
+			display: none;
+		}
+	}
+
 	@media (max-width: 768px) {
 		.about-grid {
 			grid-template-columns: 1fr;

@@ -73,4 +73,10 @@
 		line-height: 1.6;
 		color: var(--color-muted);
 	}
+
+	@media (max-width: 600px) {
+		.step-card {
+			padding: 1.25rem;
+		}
+	}
 </style>

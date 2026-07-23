@@ -23,7 +23,7 @@
 					observer.disconnect();
 				}
 			},
-			{ threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+			{ threshold: 0.05, rootMargin: '0px 0px -60px 0px' }
 		);
 
 		observer.observe(el);
@@ -43,13 +43,16 @@
 <style>
 	.reveal {
 		opacity: 0;
-		transform: translateY(30px);
-		transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-					transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+		transform: translateY(24px) scale(0.98);
+		filter: blur(4px);
+		transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+					transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+					filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
 	.reveal--visible {
 		opacity: 1;
-		transform: translateY(0);
+		transform: translateY(0) scale(1);
+		filter: blur(0);
 	}
 </style>
