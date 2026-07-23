@@ -59,15 +59,17 @@
 	}
 
 	.quote-name {
-		font-family: 'Georgia', 'Times New Roman', serif;
-		font-size: var(--text-base);
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		font-weight: 500;
 		font-style: italic;
 		color: var(--color-ink);
+		letter-spacing: -0.01em;
 	}
 
 	.quote-role {
 		font-family: var(--font-body);
-		font-size: var(--text-xs);
+		font-size: var(--text-sm);
 		color: var(--color-muted);
 		letter-spacing: 0.02em;
 	}
