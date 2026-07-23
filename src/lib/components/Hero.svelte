@@ -10,7 +10,7 @@
 		<div class="hero-grid">
 			<div class="hero-content">
 				<ScrollReveal>
-					<span class="hero-eyebrow">Full Stack Developer · Go · TypeScript · Cloud</span>
+					<span class="hero-eyebrow">Full Stack Developer · Python · Go · TypeScript</span>
 				</ScrollReveal>
 
 				<ScrollReveal delay={0.15}>
@@ -23,7 +23,7 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 
 				<ScrollReveal delay={0.3}>
 					<p class="hero-description">
-						Full-stack developer working across Go, TypeScript, Python, and cloud-native
+						Full-stack developer working across Python, Go, TypeScript, and cloud-native
 						infrastructure. I build payment systems, AI platforms, and everything in between —
 						with a focus on clean APIs, concurrency safety, and reliable deployments.
 					</p>
@@ -52,11 +52,19 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 									/>
 								</div>
 							</div>
+							<img
+								src="/peep-standing.svg"
+								alt=""
+								class="hero-peep"
+								width="80"
+								height="120"
+								aria-hidden="true"
+							/>
 							<div class="portrait-caption">
 								<svg width="24" height="12" viewBox="0 0 24 12" fill="none" class="caption-arrow">
 									<path d="M24 6H2M6 2l-4 4 4 4" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
-								<span>B.Tech CSE · IIIT Ranchi · CGPA 8.50</span>
+								<span>B.Tech CSE · IIIT Ranchi</span>
 							</div>
 						</div>
 					</ParallaxTilt>
@@ -118,7 +126,7 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 		margin-top: 0.5rem;
 	}
 
-	.hero-underline {
+	:global(.hero-underline) {
 		margin-top: 0.25rem;
 		margin-left: 0.25rem;
 	}
@@ -129,10 +137,21 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 		justify-content: center;
 	}
 
+	.hero-peep {
+		position: absolute;
+		bottom: -20px;
+		right: -20px;
+		width: 70px;
+		height: auto;
+		opacity: 0.25;
+		pointer-events: none;
+	}
+
 	.portrait-wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		position: relative;
 	}
 
 	.portrait {

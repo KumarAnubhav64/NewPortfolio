@@ -50,6 +50,14 @@
 							items={funFacts}
 							closingQuote="Good code is not just what the machine reads. Good code is what another human can understand."
 						/>
+						<img
+							src="/peep-sitting.svg"
+							alt=""
+							class="about-peep"
+							width="80"
+							height="80"
+							aria-hidden="true"
+						/>
 					</div>
 				</ScrollReveal>
 			</div>
@@ -83,11 +91,21 @@
 		position: relative;
 	}
 
-	.about-star {
+	:global(.about-star) {
 		position: absolute;
 		top: -8px;
 		right: -8px;
 		z-index: 1;
+	}
+
+	.about-peep {
+		position: absolute;
+		bottom: -24px;
+		left: -24px;
+		width: 64px;
+		height: auto;
+		opacity: 0.2;
+		pointer-events: none;
 	}
 
 	@media (max-width: 768px) {

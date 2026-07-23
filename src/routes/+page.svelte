@@ -11,7 +11,7 @@
 
 <svelte:head>
 	<title>Kumar Anubhav — Full Stack Developer</title>
-	<meta name="description" content="Full-stack developer specializing in Go, TypeScript, Python, and cloud-native infrastructure. CSE @ IIIT Ranchi." />
+	<meta name="description" content="Full-stack developer specializing in Python, Go, and TypeScript with cloud-native infrastructure. CSE @ IIIT Ranchi." />
 </svelte:head>
 
 <Nav />

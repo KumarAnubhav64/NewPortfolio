@@ -15,6 +15,14 @@
 <section id="contact" class="section section--alt">
 	<div class="container">
 		<div class="contact-inner">
+			<img
+				src="/peep-standing.svg"
+				alt=""
+				class="contact-peep"
+				width="80"
+				height="120"
+				aria-hidden="true"
+			/>
 			<ScrollReveal>
 				<div class="contact-eyebrow">
 					<span class="eyebrow-line"></span>
@@ -63,6 +71,7 @@
 		gap: 1.5rem;
 		max-width: 640px;
 		margin: 0 auto;
+		position: relative;
 	}
 
 	.contact-eyebrow {
@@ -103,6 +112,21 @@
 		line-height: 1.7;
 		color: var(--color-muted);
 		max-width: 500px;
+	}
+
+	:global(.contact-sparkle) {
+		margin-left: 0.5rem;
+		vertical-align: middle;
+	}
+
+	.contact-peep {
+		position: absolute;
+		right: -60px;
+		top: 10%;
+		width: 80px;
+		height: auto;
+		opacity: 0.2;
+		pointer-events: none;
 	}
 
 	.contact-cta {

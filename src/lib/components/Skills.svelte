@@ -5,7 +5,7 @@
 	const categories = [
 		{
 			title: 'Languages',
-			skills: ['TypeScript', 'JavaScript', 'Python', 'Go', 'SQL', 'Bash', 'C', 'C++']
+			skills: ['Python', 'TypeScript', 'JavaScript', 'Go', 'SQL', 'Bash', 'C', 'C++']
 		},
 		{
 			title: 'Frontend',
