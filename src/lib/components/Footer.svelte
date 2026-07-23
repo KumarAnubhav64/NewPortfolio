@@ -1,20 +1,14 @@
-<script lang="ts">
-	import ScrollReveal from './ScrollReveal.svelte';
-</script>
-
 <footer class="footer">
 	<div class="container">
-		<ScrollReveal>
-			<div class="footer-inner">
-				<div class="footer-brand">
-					<span class="logo-name">Kumar Anubhav</span>
-				</div>
-				<div class="footer-info">
-					<span class="footer-copyright">© {new Date().getFullYear()} Kumar Anubhav.</span>
-					<span class="footer-credit">Built with Go, TypeScript & Svelte.</span>
-				</div>
+		<div class="footer-inner">
+			<div class="footer-brand">
+				<span class="logo-name">Kumar Anubhav</span>
 			</div>
-		</ScrollReveal>
+			<div class="footer-info">
+				<span class="footer-copyright">© {new Date().getFullYear()} Kumar Anubhav.</span>
+				<span class="footer-credit">Built with Go, TypeScript & Svelte.</span>
+			</div>
+		</div>
 	</div>
 </footer>
 
