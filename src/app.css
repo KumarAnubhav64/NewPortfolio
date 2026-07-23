@@ -129,6 +129,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ===========================================
    Scroll reveal animation
    =========================================== */
+
+.section-anchor {
+	scroll-margin-top: 80px;
+}
+
+
 .reveal {
 	opacity: 0;
 	transform: translateY(30px);
@@ -144,3 +150,45 @@ h1, h2, h3, h4, h5, h6 {
 .reveal--delay-2 { transition-delay: 0.2s; }
 .reveal--delay-3 { transition-delay: 0.3s; }
 .reveal--delay-4 { transition-delay: 0.4s; }
+
+/* ===========================================
+   Back to top button
+   =========================================== */
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1.5px solid var(--color-border);
+	background: var(--color-surface);
+	color: var(--color-muted);
+	cursor: pointer;
+	opacity: 0;
+	transform: translateY(12px);
+	pointer-events: none;
+	transition: opacity 0.4s var(--ease-out),
+				transform 0.4s var(--ease-out),
+				background-color 0.2s,
+				border-color 0.2s,
+				color 0.2s;
+	z-index: 50;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.back-to-top--visible {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.back-to-top:hover {
+	border-color: var(--color-accent);
+	color: var(--color-accent);
+	background: var(--color-bg);
+}
+

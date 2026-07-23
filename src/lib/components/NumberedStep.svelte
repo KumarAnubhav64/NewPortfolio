@@ -10,23 +10,42 @@
 	} = $props();
 </script>
 
-<div class="step">
-	<span class="step-number">{number}</span>
-	<div class="step-rule"></div>
+<div class="step-card">
+	<div class="step-header">
+		<span class="step-number">{number}</span>
+		<div class="step-rule"></div>
+	</div>
 	<h3 class="step-title">{title}</h3>
 	<p class="step-description">{description}</p>
 </div>
 
 <style>
-	.step {
+	.step-card {
+		background: var(--color-surface);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		padding: 1.75rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		align-items: flex-start;
+		transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+	}
+
+	.step-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+	}
+
+	.step-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 1rem;
 	}
 
 	.step-number {
 		font-family: var(--font-display);
-		font-size: var(--text-4xl);
+		font-size: var(--text-3xl);
 		font-style: italic;
 		font-weight: 300;
 		color: var(--color-accent);
@@ -34,10 +53,10 @@
 	}
 
 	.step-rule {
-		width: 2rem;
-		height: 2px;
+		flex: 1;
+		height: 1px;
 		background: var(--color-border);
-		margin: 0.5rem 0;
+		min-width: 1.5rem;
 	}
 
 	.step-title {
@@ -45,7 +64,7 @@
 		font-size: var(--text-base);
 		font-weight: 600;
 		color: var(--color-ink);
-		margin-bottom: 0.25rem;
+		margin-bottom: 0.5rem;
 	}
 
 	.step-description {
@@ -53,6 +72,5 @@
 		font-size: var(--text-sm);
 		line-height: 1.6;
 		color: var(--color-muted);
-		max-width: 280px;
 	}
 </style>

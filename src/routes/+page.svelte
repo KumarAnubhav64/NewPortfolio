@@ -7,6 +7,20 @@
 	import About from '$lib/components/About.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	let showBackToTop = $state(false);
+
+	$effect(() => {
+		const onScroll = () => {
+			showBackToTop = window.scrollY > 600;
+		};
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
+
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 </script>
 
 <svelte:head>
@@ -22,3 +36,14 @@
 <About />
 <Contact />
 <Footer />
+
+<button
+	class="back-to-top"
+	class:back-to-top--visible={showBackToTop}
+	onclick={scrollToTop}
+	aria-label="Scroll to top"
+>
+	<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+		<path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+</button>

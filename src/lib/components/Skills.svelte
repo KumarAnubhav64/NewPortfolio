@@ -26,7 +26,7 @@
 	];
 </script>
 
-<section id="skills" class="section section--alt">
+<section id="skills" class="section section--alt section-anchor">
 	<div class="container">
 		<ScrollReveal>
 			<div class="skills-header">

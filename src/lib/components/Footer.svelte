@@ -7,7 +7,6 @@
 		<ScrollReveal>
 			<div class="footer-inner">
 				<div class="footer-brand">
-					<span class="logo-mark">KA</span>
 					<span class="logo-name">Kumar Anubhav</span>
 				</div>
 				<div class="footer-info">
@@ -36,29 +35,14 @@
 	.footer-brand {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
-	}
-
-	.logo-mark {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
-		background: var(--color-ink);
-		color: #fff;
-		font-family: var(--font-display);
-		font-size: 0.65rem;
-		font-weight: 600;
-		letter-spacing: 0.05em;
 	}
 
 	.logo-name {
-		font-family: var(--font-body);
-		font-size: var(--text-sm);
-		font-weight: 500;
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: 400;
 		color: var(--color-ink);
+		letter-spacing: -0.01em;
 	}
 
 	.footer-info {

@@ -2,6 +2,8 @@
 	import Button from './Button.svelte';
 
 	let mobileMenuOpen = $state(false);
+	let isScrolled = $state(false);
+	let activeSection = $state('');
 
 	const navLinks = [
 		{ label: 'Work', href: '#work' },
@@ -14,12 +16,45 @@
 	function closeMenu() {
 		mobileMenuOpen = false;
 	}
+
+	$effect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				// Find the most visible section
+				let maxRatio = 0;
+				let maxId = '';
+				for (const entry of entries) {
+					if (entry.intersectionRatio > maxRatio) {
+						maxRatio = entry.intersectionRatio;
+						maxId = entry.target.id;
+					}
+				}
+				if (maxId) activeSection = maxId;
+			},
+			{ threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5], rootMargin: '-80px 0px -30% 0px' }
+		);
+
+		const sections = document.querySelectorAll('section[id]');
+		sections.forEach((s) => observer.observe(s));
+
+		// Track scroll shadow
+		const onScroll = () => {
+			isScrolled = window.scrollY > 80;
+		};
+		window.addEventListener('scroll', onScroll, { passive: true });
+		// Initial check
+		onScroll();
+
+		return () => {
+			observer.disconnect();
+			window.removeEventListener('scroll', onScroll);
+		};
+	});
 </script>
 
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav" class:nav--scrolled={isScrolled} aria-label="Main navigation">
 	<div class="nav-inner container">
 		<a href="/" class="nav-logo">
-			<span class="logo-mark">KA</span>
 			<span class="logo-name">Kumar Anubhav</span>
 		</a>
 
@@ -35,7 +70,12 @@
 
 		<div class="nav-links" class:nav-links--open={mobileMenuOpen}>
 			{#each navLinks as link}
-				<a href={link.href} class="nav-link" onclick={closeMenu}>{link.label}</a>
+				<a
+					href={link.href}
+					class="nav-link"
+					class:nav-link--active={activeSection === link.href.slice(1)}
+					onclick={closeMenu}
+				>{link.label}</a>
 			{/each}
 		</div>
 
@@ -52,6 +92,12 @@
 		z-index: 100;
 		background: rgba(234, 235, 238, 0.9);
 		backdrop-filter: blur(12px);
+		transition: box-shadow 0.4s var(--ease-out), padding 0.3s var(--ease-out);
+	}
+
+	.nav--scrolled {
+		box-shadow: 0 1px 0 var(--color-border);
+		padding: 0.75rem 0;
 	}
 
 	.nav-inner {
@@ -63,32 +109,17 @@
 	.nav-logo {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
 		text-decoration: none;
 		margin-right: auto;
 		flex-shrink: 0;
 	}
 
-	.logo-mark {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 36px;
-		height: 36px;
-		border-radius: 50%;
-		background: var(--color-ink);
-		color: #fff;
-		font-family: var(--font-display);
-		font-size: var(--text-xs);
-		font-weight: 600;
-		letter-spacing: 0.05em;
-	}
-
 	.logo-name {
-		font-family: var(--font-body);
-		font-size: var(--text-sm);
-		font-weight: 500;
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: 400;
 		color: var(--color-ink);
+		letter-spacing: -0.01em;
 	}
 
 	.nav-links {
@@ -124,6 +155,15 @@
 
 	.nav-link:hover::after {
 		width: 100%;
+	}
+
+	.nav-link--active {
+		color: var(--color-ink);
+	}
+
+	.nav-link--active::after {
+		width: 100%;
+		background: var(--color-ink);
 	}
 
 	.nav-actions {

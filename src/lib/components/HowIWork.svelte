@@ -27,7 +27,7 @@
 	];
 </script>
 
-<section id="how-i-work" class="section section--alt">
+<section id="how-i-work" class="section section--alt section-anchor">
 	<div class="container">
 		<SectionHeadline
 			eyebrow="How I Work"

@@ -35,7 +35,7 @@
 	];
 </script>
 
-<section id="work" class="section">
+<section id="work" class="section section-anchor">
 	<div class="container">
 		<SectionHeadline
 			eyebrow="Selected Work"

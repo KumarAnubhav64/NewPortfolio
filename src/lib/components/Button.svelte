@@ -50,6 +50,15 @@
 		text-decoration: none;
 		border: 1.5px solid transparent;
 		line-height: 1;
+		transform: scale(1);
+	}
+
+	.btn:hover {
+		transform: scale(1.02);
+	}
+
+	.btn:active {
+		transform: scale(0.98);
 	}
 
 	.btn-arrow {

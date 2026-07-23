@@ -12,7 +12,7 @@
 	];
 </script>
 
-<section id="contact" class="section section--alt">
+<section id="contact" class="section section--alt section-anchor">
 	<div class="container">
 		<div class="contact-inner">
 			<img

@@ -28,6 +28,11 @@
 		<div class="card-image">
 			{#if imageUrl}
 				<img src={imageUrl} alt={title} />
+				<div class="image-overlay">
+					<svg class="overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<path d="M7 17l9-9M7 8h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
 			{:else}
 				<div class="image-placeholder">
 					<span class="placeholder-label">{title}</span>
@@ -88,6 +93,10 @@
 		overflow: hidden;
 	}
 
+	.card-image {
+		position: relative;
+	}
+
 	.card-image img {
 		width: 100%;
 		height: 100%;
@@ -96,7 +105,28 @@
 	}
 
 	.project-card:hover .card-image img {
-		transform: scale(1.03);
+		transform: scale(1.05);
+	}
+
+	.image-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to top, rgba(22,24,25,0.4) 0%, transparent 60%);
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		padding: 1rem;
+		opacity: 0;
+		transition: opacity 0.4s var(--ease-out);
+	}
+
+	.project-card:hover .image-overlay {
+		opacity: 1;
+	}
+
+	.overlay-icon {
+		color: #fff;
+		opacity: 0.8;
 	}
 
 	.image-placeholder {

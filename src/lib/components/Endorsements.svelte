@@ -4,6 +4,7 @@
 	import ScrollReveal from './ScrollReveal.svelte';
 
 	let currentIndex = $state(0);
+	let isHovering = $state(false);
 	const visibleCount = 3;
 
 	const testimonials = [
@@ -49,9 +50,17 @@
 	}
 
 	const totalDots = maxIndex + 1;
+
+	$effect(() => {
+		if (isHovering) return;
+		const interval = setInterval(() => {
+			goNext();
+		}, 4500);
+		return () => clearInterval(interval);
+	});
 </script>
 
-<section id="endorsements" class="section section--alt">
+<section id="endorsements" class="section section--alt section-anchor">
 	<div class="container">
 		<ScrollReveal>
 			<div class="endorsements-header">
@@ -60,7 +69,14 @@
 			</div>
 		</ScrollReveal>
 
-		<div class="carousel-container">
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<div
+			class="carousel-container"
+			role="region"
+			aria-label="Testimonials carousel"
+			onmouseenter={() => isHovering = true}
+			onmouseleave={() => isHovering = false}
+		>
 			<ScrollReveal delay={0.15}>
 				<div class="testimonials-track" style="transform: translateX(calc(-{currentIndex} * (100% / {visibleCount} + {1.5 / 3}rem)))">
 					{#each testimonials as testimonial}

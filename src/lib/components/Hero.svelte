@@ -5,7 +5,7 @@
 	import HandDrawnAccent from './HandDrawnAccent.svelte';
 </script>
 
-<section class="hero section">
+<section class="hero section section-anchor">
 	<div class="container">
 		<div class="hero-grid">
 			<div class="hero-content">
@@ -52,14 +52,6 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 									/>
 								</div>
 							</div>
-							<img
-								src="/peep-standing.svg"
-								alt=""
-								class="hero-peep"
-								width="80"
-								height="120"
-								aria-hidden="true"
-							/>
 							<div class="portrait-caption">
 								<svg width="24" height="12" viewBox="0 0 24 12" fill="none" class="caption-arrow">
 									<path d="M24 6H2M6 2l-4 4 4 4" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -137,21 +129,10 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 		justify-content: center;
 	}
 
-	.hero-peep {
-		position: absolute;
-		bottom: -20px;
-		right: -20px;
-		width: 70px;
-		height: auto;
-		opacity: 0.25;
-		pointer-events: none;
-	}
-
 	.portrait-wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		position: relative;
 	}
 
 	.portrait {

@@ -13,7 +13,7 @@
 	];
 </script>
 
-<section id="about" class="section">
+<section id="about" class="section section-anchor">
 	<div class="container">
 		<SectionHeadline
 			eyebrow="About"
