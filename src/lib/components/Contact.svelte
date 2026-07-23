@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import ScrollReveal from './ScrollReveal.svelte';
+	import HandDrawnAccent from './HandDrawnAccent.svelte';
 
 	const socialLinks = [
 		{ label: 'Email', href: 'mailto:kumaranubhav20026@gmail.com' },
@@ -25,6 +26,7 @@
 			<ScrollReveal delay={0.15}>
 				<h2 class="contact-headline">
 					Let's <em class="headline-em">ship</em> something great together.
+					<HandDrawnAccent variant="sparkle" class="contact-sparkle" />
 				</h2>
 			</ScrollReveal>
 

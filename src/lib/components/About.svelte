@@ -2,6 +2,7 @@
 	import SectionHeadline from './SectionHeadline.svelte';
 	import FactBox from './FactBox.svelte';
 	import ScrollReveal from './ScrollReveal.svelte';
+	import HandDrawnAccent from './HandDrawnAccent.svelte';
 
 	const funFacts = [
 		'Pursuing B.Tech in Computer Science at IIIT Ranchi (2023–2027)',
@@ -42,11 +43,14 @@
 
 			<div class="about-sidebar">
 				<ScrollReveal delay={0.2}>
-					<FactBox
-						title="Interesting Facts"
-						items={funFacts}
-						closingQuote="Good code is not just what the machine reads. Good code is what another human can understand."
-					/>
+					<div class="about-fact-wrapper">
+						<HandDrawnAccent variant="star" class="about-star" />
+						<FactBox
+							title="Interesting Facts"
+							items={funFacts}
+							closingQuote="Good code is not just what the machine reads. Good code is what another human can understand."
+						/>
+					</div>
 				</ScrollReveal>
 			</div>
 		</div>
@@ -73,6 +77,17 @@
 		line-height: 1.7;
 		color: var(--color-ink);
 		max-width: 540px;
+	}
+
+	.about-fact-wrapper {
+		position: relative;
+	}
+
+	.about-star {
+		position: absolute;
+		top: -8px;
+		right: -8px;
+		z-index: 1;
 	}
 
 	@media (max-width: 768px) {

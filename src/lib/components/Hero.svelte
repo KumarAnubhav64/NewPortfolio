@@ -2,6 +2,7 @@
 	import Button from './Button.svelte';
 	import ScrollReveal from './ScrollReveal.svelte';
 	import ParallaxTilt from './ParallaxTilt.svelte';
+	import HandDrawnAccent from './HandDrawnAccent.svelte';
 </script>
 
 <section class="hero section">
@@ -17,6 +18,7 @@
 						I write <em class="headline-em">code</em> that's
 type-safe, <em class="headline-em">tested</em>, and ready for production.
 					</h1>
+					<HandDrawnAccent variant="squiggle" class="hero-underline"/>
 				</ScrollReveal>
 
 				<ScrollReveal delay={0.3}>
@@ -114,6 +116,11 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 		gap: 1rem;
 		flex-wrap: wrap;
 		margin-top: 0.5rem;
+	}
+
+	.hero-underline {
+		margin-top: 0.25rem;
+		margin-left: 0.25rem;
 	}
 
 	/* Portrait */
