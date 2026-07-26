@@ -33,10 +33,10 @@
 
 	.logo-name {
 		font-family: var(--font-display);
-		font-size: var(--text-base);
-		font-weight: 400;
+		font-size: var(--text-lg);
+		font-weight: 600;
 		color: var(--color-ink);
-		letter-spacing: -0.01em;
+		letter-spacing: -0.02em;
 	}
 
 	.footer-info {

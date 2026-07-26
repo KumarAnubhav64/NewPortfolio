@@ -53,10 +53,8 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 								</div>
 							</div>
 							<div class="portrait-caption">
-								<svg width="24" height="12" viewBox="0 0 24 12" fill="none" class="caption-arrow">
-									<path d="M24 6H2M6 2l-4 4 4 4" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
 								<span>B.Tech CSE · IIIT Ranchi</span>
+								<HandDrawnAccent variant="squiggle" class="caption-flourish" />
 							</div>
 						</div>
 					</ParallaxTilt>
@@ -161,8 +159,9 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 
 	.portrait-caption {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.25rem;
 		margin-top: 0.75rem;
 		font-family: var(--font-body);
 		font-size: var(--text-sm);
@@ -170,8 +169,29 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 		font-style: italic;
 	}
 
-	.caption-arrow {
+	:global(.caption-flourish) {
 		flex-shrink: 0;
+		margin-left: -1rem;
+	}
+
+	:global(.caption-flourish svg path) {
+		stroke-dasharray: 100;
+		stroke-dashoffset: 100;
+		animation: draw-squiggle 0.8s var(--ease-out) forwards;
+		animation-delay: 0.4s;
+	}
+
+	@keyframes draw-squiggle {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		:global(.caption-flourish svg path) {
+			animation: none;
+			stroke-dashoffset: 0;
+		}
 	}
 
 	@media (max-width: 900px) {
