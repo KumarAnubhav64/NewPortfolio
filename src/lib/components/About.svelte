@@ -8,7 +8,7 @@
 		'Pursuing B.Tech in Computer Science at IIIT Ranchi (2023–2027)',
 		'Full Stack Development Intern at DAaranya.ai building AI-powered platforms',
 		'Lead the IoT & Robotics Club at IIIT Ranchi',
-		'Built an idempotent transaction service in Go for concurrency-safe payments',
+		'Shipped encrypted personal projects, including a peer-to-peer voice app and a steganography vault',
 		'Obsessed with clean architecture, reliable systems, and great developer experiences'
 	];
 </script>
@@ -17,8 +17,8 @@
 	<div class="container">
 		<SectionHeadline
 			eyebrow="About"
-			headline="A developer who cares about systems, architecture, and the details that make software reliable."
-			italicWords={['systems', 'architecture', 'reliable']}
+			headline="A developer who cares about systems, architecture, and the details that make software reliable and private."
+			italicWords={['systems', 'architecture', 'reliable', 'private']}
 		/>
 
 		<div class="about-grid">
@@ -27,16 +27,16 @@
 					<p class="about-paragraph">
 						I'm a full-stack developer and CSE undergraduate at IIIT Ranchi with experience
 						building production-grade applications from the ground up. I've worked on
-						AI-powered platforms, payment systems with idempotent webhooks, and
-						multi-tenant cloud architectures.
+						AI-powered platforms, privacy and security tools, and multi-tenant cloud
+						architectures.
 					</p>
 				</ScrollReveal>
 				<ScrollReveal delay={0.15}>
 					<p class="about-paragraph">
-						My approach to building software is rooted in first principles — I care deeply about
-						type safety, clean APIs, and systems that fail gracefully. From Go-based
-						transaction services to React frontends deployed on GCP, I enjoy owning
-						the full stack and shipping with confidence.
+						My approach to building software is rooted in first principles. I care deeply about
+						type safety, clean APIs, and systems that fail gracefully. From encrypted
+						peer-to-peer apps to React frontends deployed on GCP, I enjoy owning the
+						full stack and shipping with confidence.
 					</p>
 				</ScrollReveal>
 			</div>

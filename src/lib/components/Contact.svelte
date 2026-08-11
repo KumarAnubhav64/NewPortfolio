@@ -1,15 +1,9 @@
 <script lang="ts">
-	import Button from './Button.svelte';
 	import ScrollReveal from './ScrollReveal.svelte';
 	import HandDrawnAccent from './HandDrawnAccent.svelte';
-
-	const socialLinks = [
-		{ label: 'Email', href: 'mailto:kumaranubhav20026@gmail.com' },
-		{ label: 'College', href: 'mailto:kumar.2023ug1026@iiitranchi.ac.in' },
-		{ label: 'GitHub', href: 'https://github.com/KumarAnubhav64' },
-		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/kumar-anubhav-45b1aa29a/' },
-		{ label: 'Resumé', href: '/resume.pdf' }
-	];
+	import ContactForm from './ContactForm.svelte';
+	import SocialIcon from './SocialIcon.svelte';
+	import { socialLinks } from '$lib/socialLinks';
 </script>
 
 <section id="contact" class="section section--alt section-anchor">
@@ -41,20 +35,23 @@
 			<ScrollReveal delay={0.3}>
 				<p class="contact-description">
 					Whether you have a project in mind, an interesting problem to solve, or just want to chat about
-					Go, React, AI, or distributed systems — I'd love to hear from you.
+					Go, React, AI, or distributed systems. I'd love to hear from you.
 				</p>
 			</ScrollReveal>
 
 			<ScrollReveal delay={0.45}>
 				<div class="contact-cta">
-					<Button href="mailto:kumaranubhav20026@gmail.com">Start a conversation</Button>
+					<ContactForm />
 				</div>
 			</ScrollReveal>
 
 			<ScrollReveal delay={0.6}>
 				<div class="contact-links">
 					{#each socialLinks as link}
-						<a href={link.href} class="contact-link">{link.label}</a>
+						<a href={link.href} class="contact-link" download={link.download || undefined}>
+							<SocialIcon name={link.icon} />
+							<span>{link.label}</span>
+						</a>
 					{/each}
 				</div>
 			</ScrollReveal>
@@ -149,6 +146,13 @@
 
 	.contact-cta {
 		margin-top: 0.5rem;
+		width: 100%;
+	}
+
+	.contact-cta :global(.form-card) {
+		width: 100%;
+		max-width: 560px;
+		margin: 0 auto;
 	}
 
 	.contact-links {
@@ -160,6 +164,9 @@
 	}
 
 	.contact-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
 		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		font-weight: 500;
@@ -167,6 +174,15 @@
 		text-decoration: none;
 		transition: opacity 0.2s;
 		position: relative;
+	}
+
+	:global(.contact-link svg) {
+		flex-shrink: 0;
+		transition: transform 0.3s var(--ease-out);
+	}
+
+	:global(.contact-link:hover svg) {
+		transform: translateY(-1px) scale(1.1);
 	}
 
 	.contact-link::after {

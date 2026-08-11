@@ -2,6 +2,7 @@
 	import Button from './Button.svelte';
 	import Logo from './Logo.svelte';
 	import { navigateToSection } from '$lib/utils/smoothNavigate';
+	import { sectionLinks } from '$lib/sectionLinks';
 
 	let mobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
@@ -94,15 +95,6 @@
 		}
 	}
 
-	const navLinks = [
-		{ label: 'Work', href: '#work' },
-		{ label: 'How I Work', href: '#how-i-work' },
-		{ label: 'Skills', href: '#skills' },
-		{ label: 'Hobbies', href: '#hobbies' },
-		{ label: 'About', href: '#about' },
-		{ label: 'Contact', href: '#contact' }
-	];
-
 	function handleNavClick(e: MouseEvent, sectionId: string) {
 		e.preventDefault();
 		closeMenu();
@@ -192,7 +184,7 @@
 
 		<!-- Desktop nav links -->
 		<div class="nav-links">
-			{#each navLinks as link}
+			{#each sectionLinks as link}
 				<a
 					href={link.href}
 					class="nav-link"
@@ -236,7 +228,7 @@
 			</div>
 
 			<div class="nav-drawer-links">
-				{#each navLinks as link, i}
+				{#each sectionLinks as link, i}
 					<a
 						href={link.href}
 						class="nav-link nav-link--drawer"

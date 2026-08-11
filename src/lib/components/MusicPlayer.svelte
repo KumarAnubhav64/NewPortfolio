@@ -34,8 +34,23 @@
 	}
 
 	let removeRetry = () => {};
+	let wasPlayingBeforeHide = false;
 
 	onMount(() => {
+		// Pause when the tab is hidden, resume when it comes back (only if it was playing).
+		const onVisibilityChange = () => {
+			if (document.hidden) {
+				if (playing) {
+					wasPlayingBeforeHide = true;
+					audio?.pause();
+				}
+			} else if (wasPlayingBeforeHide) {
+				wasPlayingBeforeHide = false;
+				playAmbient();
+			}
+		};
+		document.addEventListener('visibilitychange', onVisibilityChange);
+
 		// Start once the intro reveal is done.
 		const onIntroComplete = () => {
 			playAmbient();
@@ -59,6 +74,7 @@
 		window.addEventListener('intro:complete', onIntroComplete);
 		return () => {
 			window.removeEventListener('intro:complete', onIntroComplete);
+			document.removeEventListener('visibilitychange', onVisibilityChange);
 			removeRetry();
 		};
 	});
