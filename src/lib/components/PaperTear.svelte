@@ -126,13 +126,17 @@
 		simTime += dt;
 		// Gravity ramps in so the fabric settles gently instead of snapping
 		const ramp = Math.min(1, simTime / 0.7);
-		const g = GRAVITY * ramp;
-		const wind = Math.sin(time * 1.2) * WIND_AMP * ramp;
+		// The fabric is only alive while actively pulled — release brings stillness.
+		const pulling = mouse.down && interactive && !revealing;
+		const g = GRAVITY * ramp * (pulling ? 1 : 0);
+		const wind = (pulling ? Math.sin(time * 1.2) * WIND_AMP : 0) * ramp;
+		// Stronger damping when released so any motion dies out to a quiet rest
+		const damp = pulling ? DAMPING : 0.86;
 
 		for (const p of points) {
 			if (p.pinned) continue;
-			const vx = (p.x - p.px) * DAMPING;
-			const vy = (p.y - p.py) * DAMPING;
+			const vx = (p.x - p.px) * damp;
+			const vy = (p.y - p.py) * damp;
 			p.px = p.x;
 			p.py = p.y;
 			p.x += vx + wind * dt * dt;
@@ -175,8 +179,8 @@
 		}
 
 		// Tear: any constraint stretched past its limit snaps — but ONLY while the user is
-		// actively dragging. The settle and wind sway can never rip the sheet on their own.
-		if (mouse.down && interactive && !revealing) {
+		// actively pulling. The settle and wind can never rip the sheet on their own.
+		if (pulling) {
 			const td2 = TEAR_FACTOR * TEAR_FACTOR;
 			let needFilter = false;
 			for (const c of constraints) {
@@ -452,7 +456,7 @@
 				<div class="pt-ink__name">Kumar Anubhav</div>
 			</ScrollReveal>
 			<ScrollReveal delay={0.15} class="pt-ink__reveal">
-				<span class="pt-ink__tagline">a thinker &amp; a tinkerer</span>
+				<span class="pt-ink__tagline">thinker, tinkerer, builder</span>
 			</ScrollReveal>
 		</div>
 

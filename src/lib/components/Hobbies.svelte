@@ -2,10 +2,10 @@
 	import SectionHeadline from './SectionHeadline.svelte';
 	import ScrollReveal from './ScrollReveal.svelte';
 
-	import japaneseImg from '$lib/assets/hobby-japanese.svg';
-	import gamingImg from '$lib/assets/hobby-gaming.svg';
-	import roboticsImg from '$lib/assets/hobby-robotics.svg';
-	import electronicsImg from '$lib/assets/hobby-electronics.svg';
+	import japaneseImg from '$lib/assets/hobby-japanese.jpg';
+	import gamingImg from '$lib/assets/hobby-gaming.jpg';
+	import roboticsImg from '$lib/assets/hobby-robotics.jpg';
+	import electronicsImg from '$lib/assets/hobby-electronics.jpg';
 
 	const hobbies = [
 		{
@@ -46,7 +46,7 @@
 				<ScrollReveal delay={(i % 2) * 0.12}>
 					<article class="hobby-card">
 						<div class="hobby-image">
-							<img src={hobby.imageUrl} alt="" width="800" height="500" />
+							<img src={hobby.imageUrl} alt="" width="800" height="500" loading="lazy" decoding="async" />
 						</div>
 						<div class="hobby-body">
 							<h3 class="hobby-title">{hobby.title}</h3>
