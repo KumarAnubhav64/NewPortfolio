@@ -4,12 +4,15 @@
 	import SelectedWork from '$lib/components/SelectedWork.svelte';
 	import HowIWork from '$lib/components/HowIWork.svelte';
 	import Skills from '$lib/components/Skills.svelte';
+	import Hobbies from '$lib/components/Hobbies.svelte';
 	import About from '$lib/components/About.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import PaperTear from '$lib/components/PaperTear.svelte';
 	import { scrollToTop } from '$lib/utils/smoothNavigate';
 
 	let showBackToTop = $state(false);
+	let showPaperTear = $state(true);
 
 	$effect(() => {
 		const onScroll = () => {
@@ -31,10 +34,15 @@
 	<SelectedWork />
 	<HowIWork />
 	<Skills />
+	<Hobbies />
 	<About />
 	<Contact />
 </div>
 <Footer />
+
+{#if showPaperTear}
+	<PaperTear onComplete={() => (showPaperTear = false)} />
+{/if}
 
 <button
 	class="back-to-top"
