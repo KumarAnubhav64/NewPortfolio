@@ -85,6 +85,7 @@
 	}
 
 	.hobby-image {
+		position: relative;
 		border-bottom: 1px solid var(--color-border);
 	}
 
@@ -92,7 +93,19 @@
 		width: 100%;
 		height: auto;
 		display: block;
-		transition: transform 0.6s var(--ease-out);
+		/* Mute the photos into the site's cool gray-blue palette */
+		filter: saturate(0.45) contrast(0.9) brightness(1.03);
+		transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+	}
+
+	/* A quiet veil that pulls each photo toward the theme's accent tone */
+	.hobby-image::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(92, 112, 149, 0.16);
+		mix-blend-mode: soft-light;
+		pointer-events: none;
 	}
 
 	.hobby-body {
@@ -122,6 +135,7 @@
 
 		.hobby-card:hover .hobby-image img {
 			transform: scale(1.03);
+			filter: saturate(0.58) contrast(0.92) brightness(1.03);
 		}
 	}
 

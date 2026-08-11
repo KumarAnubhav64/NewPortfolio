@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="footer-inner">
 			<div class="footer-brand">
-				<Logo size={28} />
+				<Logo size={21} />
 			</div>
 			<div class="footer-info">
 				<span class="footer-copyright">© {new Date().getFullYear()} Kumar Anubhav.</span>

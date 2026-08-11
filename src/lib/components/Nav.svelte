@@ -175,7 +175,7 @@
 <nav class="nav" class:nav--scrolled={isScrolled} class:nav--menu-open={mobileMenuOpen} aria-label="Main navigation">
 	<div class="nav-inner container">
 		<a href="/" class="nav-logo" aria-label="Kumar Anubhav — Home">
-			<Logo size={34} decorative />
+			<Logo size={24} decorative />
 		</a>
 
 		<button
@@ -545,6 +545,19 @@
 	/* Remove grip pulse when drawer is closing */
 	.nav-drawer:not(.nav-drawer--open) .nav-drawer-grip-bar {
 		animation: none;
+	}
+
+	/* Keep the wordmark and actions from overflowing on mid-size screens */
+	@media (max-width: 1000px) {
+		.nav-actions {
+			display: none;
+		}
+	}
+
+	@media (max-width: 900px) {
+		:global(.nav-logo .logo) {
+			--logo-size: 21px !important;
+		}
 	}
 
 	@media (max-width: 768px) {

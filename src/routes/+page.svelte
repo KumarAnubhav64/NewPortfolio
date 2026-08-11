@@ -8,11 +8,11 @@
 	import About from '$lib/components/About.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import PaperTear from '$lib/components/PaperTear.svelte';
+	import IntroReveal from '$lib/components/IntroReveal.svelte';
 	import { scrollToTop } from '$lib/utils/smoothNavigate';
 
 	let showBackToTop = $state(false);
-	let showPaperTear = $state(true);
+	let showIntro = $state(true);
 
 	$effect(() => {
 		const onScroll = () => {
@@ -40,8 +40,8 @@
 </div>
 <Footer />
 
-{#if showPaperTear}
-	<PaperTear onComplete={() => (showPaperTear = false)} />
+{#if showIntro}
+	<IntroReveal onComplete={() => (showIntro = false)} />
 {/if}
 
 <button
