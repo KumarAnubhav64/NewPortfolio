@@ -46,11 +46,16 @@
 			</ScrollReveal>
 
 			<ScrollReveal delay={0.6}>
-				<div class="contact-links">
+				<div class="contact-socials">
 					{#each socialLinks as link}
-						<a href={link.href} class="contact-link" download={link.download || undefined}>
-							<SocialIcon name={link.icon} />
-							<span>{link.label}</span>
+						<a
+							href={link.href}
+							class="contact-social"
+							download={link.download || undefined}
+							aria-label={link.label}
+							title={link.label}
+						>
+							<SocialIcon name={link.icon} size={20} />
 						</a>
 					{/each}
 				</div>
@@ -135,8 +140,8 @@
 			width: 32px;
 		}
 
-		.contact-links {
-			gap: 1rem;
+		.contact-socials {
+			gap: 0.85rem;
 		}
 
 		.contact-description {
@@ -153,54 +158,45 @@
 		width: 100%;
 		max-width: 560px;
 		margin: 0 auto;
-	}
-
-	.contact-links {
+	}	.contact-socials {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 1.5rem;
-		margin-top: 0.5rem;
+		gap: 1.25rem;
+		margin-top: 0.75rem;
 	}
 
-	.contact-link {
+	.contact-social {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.45rem;
-		font-family: var(--font-body);
-		font-size: var(--text-sm);
-		font-weight: 500;
+		justify-content: center;
+		width: 52px;
+		height: 52px;
+		border-radius: 14px;
+		border: 1.5px solid var(--color-border);
+		background: transparent;
 		color: var(--color-accent);
 		text-decoration: none;
-		transition: opacity 0.2s;
-		position: relative;
+		transition:
+			transform 0.3s var(--ease-out),
+			border-color 0.3s var(--ease-out),
+			background 0.3s var(--ease-out),
+			box-shadow 0.3s var(--ease-out);
 	}
 
-	:global(.contact-link svg) {
-		flex-shrink: 0;
-		transition: transform 0.3s var(--ease-out);
+	.contact-social:hover {
+		transform: translateY(-3px);
+		border-color: var(--color-accent);
+		background: rgba(92, 112, 149, 0.08);
+		box-shadow: 0 10px 24px rgba(92, 112, 149, 0.12);
 	}
 
-	:global(.contact-link:hover svg) {
-		transform: translateY(-1px) scale(1.1);
+	.contact-social:active {
+		transform: translateY(-1px) scale(0.97);
 	}
 
-	.contact-link::after {
-		content: '';
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background: var(--color-accent);
-		transition: width 0.3s var(--ease-out);
-	}
-
-	.contact-link:hover::after {
-		width: 100%;
-	}
-
-	.contact-link:hover {
-		opacity: 0.8;
+	.contact-social:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 3px;
 	}
 </style>
