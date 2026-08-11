@@ -3,7 +3,7 @@
 	import ScrollReveal from './ScrollReveal.svelte';
 
 	import japaneseImg from '$lib/assets/hobby-japanese.jpg';
-	import gamingImg from '$lib/assets/hobby-gaming.jpg';
+	import musicImg from '$lib/assets/hobby-music.jpg';
 	import roboticsImg from '$lib/assets/hobby-robotics.jpg';
 	import electronicsImg from '$lib/assets/hobby-electronics.jpg';
 
@@ -14,9 +14,9 @@
 			imageUrl: japaneseImg
 		},
 		{
-			title: 'Gaming',
-			description: 'Competitive shooters to open worlds — reflexes, strategy, and good stories.',
-			imageUrl: gamingImg
+			title: 'Loves Music',
+			description: 'J-pop, K-pop, ghazals, Bollywood, English — everything, depending on the mood.',
+			imageUrl: musicImg
 		},
 		{
 			title: 'Robotics',
@@ -24,7 +24,7 @@
 			imageUrl: roboticsImg
 		},
 		{
-			title: 'Repairing Electronics',
+			title: 'Repairing Broken Things',
 			description: 'Soldering, reviving dead boards, and fixing what everyone else gave up on.',
 			imageUrl: electronicsImg
 		}
