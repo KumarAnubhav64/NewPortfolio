@@ -2,6 +2,7 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import Cursor from '$lib/components/Cursor.svelte';
+	import MusicPlayer from '$lib/components/MusicPlayer.svelte';
 
 	let { children }: { children: import('svelte').Snippet } = $props();
 </script>
@@ -12,4 +13,5 @@
 </svelte:head>
 
 <Cursor />
+<MusicPlayer />
 {@render children()}

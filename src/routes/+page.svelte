@@ -14,6 +14,12 @@
 	let showBackToTop = $state(false);
 	let showIntro = $state(true);
 
+	function handleIntroComplete() {
+		showIntro = false;
+		// Let the floating music player know the reveal is done
+		window.dispatchEvent(new CustomEvent('intro:complete'));
+	}
+
 	$effect(() => {
 		const onScroll = () => {
 			showBackToTop = window.scrollY > 600;
@@ -41,7 +47,7 @@
 <Footer />
 
 {#if showIntro}
-	<IntroReveal onComplete={() => (showIntro = false)} />
+	<IntroReveal onComplete={handleIntroComplete} />
 {/if}
 
 <button

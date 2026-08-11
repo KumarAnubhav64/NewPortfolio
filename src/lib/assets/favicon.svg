@@ -1,8 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Soft accent glow, echoing the intro screen's halo behind the name -->
+    <radialGradient id="ink-glow" cx="50%" cy="44%" r="65%">
+      <stop offset="0%" stop-color="#5c7095" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#5c7095" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ink tile, same as the intro screen -->
   <rect width="64" height="64" rx="15" fill="#161819" />
-  <rect x="3.1" y="3.1" width="57.8" height="57.8" rx="12.3" fill="none" stroke="#a6b8db" stroke-opacity="0.5" stroke-width="2.4" />
-  <path
-    d="M32 14.7C33.5 25.2 38.8 30.5 49.3 32C38.8 33.5 33.5 38.8 32 49.3C30.5 38.8 25.2 33.5 14.7 32C25.2 30.5 30.5 25.2 32 14.7Z"
-    fill="#f4f5f7"
-  />
+  <rect width="64" height="64" rx="15" fill="url(#ink-glow)" />
+
+  <!-- The K of "Kumar Anubhav", drawn in the same italic serif voice as the
+       Fraunces wordmark, in the paper tone of the name on the ink screen -->
+  <g stroke="#f4f1e9" stroke-width="8.6" stroke-linecap="round" fill="none">
+    <path d="M20.5 12.5 L24 51.5" />
+    <path d="M24 36 C29 30 35.5 22 44 15.5" />
+    <path d="M24 36 C29 42 37 47.5 45.5 51.5" />
+  </g>
 </svg>
