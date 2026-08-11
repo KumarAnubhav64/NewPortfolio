@@ -1,0 +1,130 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F4F5F7"/>
+
+  <!-- Left: campaigns dashboard -->
+  <rect x="24" y="24" width="360" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+
+  <!-- Header -->
+  <rect x="44" y="44" width="110" height="9" rx="4.5" fill="#1E2430" opacity="0.7"/>
+  <rect x="44" y="60" width="180" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="300" y="42" width="44" height="24" rx="12" fill="#5C7095" opacity="0.12"/>
+  <rect x="310" y="51" width="24" height="6" rx="3" fill="#5C7095" opacity="0.6"/>
+
+  <!-- KPI row -->
+  <rect x="44" y="84" width="152" height="64" rx="12" fill="#F7F8FA" stroke="#EAEBEE" stroke-width="1"/>
+  <rect x="60" y="98" width="60" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="60" y="110" width="50" height="10" rx="5" fill="#1E2430" opacity="0.6"/>
+  <rect x="60" y="128" width="80" height="5" rx="2.5" fill="#34C749" opacity="0.5"/>
+
+  <rect x="212" y="84" width="152" height="64" rx="12" fill="#F7F8FA" stroke="#EAEBEE" stroke-width="1"/>
+  <rect x="228" y="98" width="60" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="228" y="110" width="40" height="10" rx="5" fill="#1E2430" opacity="0.6"/>
+  <rect x="228" y="128" width="70" height="5" rx="2.5" fill="#FDBC40" opacity="0.5"/>
+
+  <!-- Campaign list header -->
+  <rect x="44" y="164" width="90" height="7" rx="3.5" fill="#C8CBD0"/>
+
+  <!-- Campaign row 1 -->
+  <rect x="44" y="180" width="320" height="72" rx="12" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))"/>
+  <circle cx="68" cy="198" r="10" fill="#34C749" opacity="0.15"/>
+  <rect x="60" y="192" width="12" height="12" rx="2" fill="#34C749" opacity="0.6"/>
+  <rect x="88" y="192" width="120" height="7" rx="3.5" fill="#1E2430" opacity="0.55"/>
+  <rect x="88" y="206" width="90" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="300" y="194" width="44" height="18" rx="9" fill="#34C749" opacity="0.12"/>
+  <rect x="310" y="200" width="24" height="5" rx="2.5" fill="#34C749" opacity="0.6"/>
+  <!-- Progress -->
+  <rect x="88" y="226" width="180" height="6" rx="3" fill="#EAEBEE"/>
+  <rect x="88" y="226" width="150" height="6" rx="3" fill="#34C749" opacity="0.7"/>
+
+  <!-- Campaign row 2 -->
+  <rect x="44" y="260" width="320" height="72" rx="12" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))"/>
+  <circle cx="68" cy="278" r="10" fill="#5C7095" opacity="0.15"/>
+  <rect x="62" y="272" width="12" height="12" rx="2" fill="#5C7095" opacity="0.6"/>
+  <rect x="88" y="272" width="110" height="7" rx="3.5" fill="#1E2430" opacity="0.55"/>
+  <rect x="88" y="286" width="100" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="300" y="274" width="44" height="18" rx="9" fill="#FDBC40" opacity="0.12"/>
+  <rect x="310" y="280" width="24" height="5" rx="2.5" fill="#FDBC40" opacity="0.6"/>
+  <rect x="88" y="306" width="180" height="6" rx="3" fill="#EAEBEE"/>
+  <rect x="88" y="306" width="90" height="6" rx="3" fill="#FDBC40" opacity="0.7"/>
+
+  <!-- Campaign row 3 -->
+  <rect x="44" y="340" width="320" height="72" rx="12" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))"/>
+  <circle cx="68" cy="358" r="10" fill="#FC5F5F" opacity="0.12"/>
+  <rect x="62" y="352" width="12" height="12" rx="2" fill="#FC5F5F" opacity="0.5"/>
+  <rect x="88" y="352" width="130" height="7" rx="3.5" fill="#1E2430" opacity="0.55"/>
+  <rect x="88" y="366" width="80" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="300" y="354" width="44" height="18" rx="9" fill="#FC5F5F" opacity="0.12"/>
+  <rect x="310" y="360" width="24" height="5" rx="2.5" fill="#FC5F5F" opacity="0.6"/>
+
+  <!-- Bottom stat -->
+  <rect x="44" y="428" width="320" height="36" rx="10" fill="#F0F2F6"/>
+  <rect x="60" y="440" width="130" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="60" y="452" width="80" height="5" rx="2.5" fill="#C8CBD0" opacity="0.5"/>
+
+  <!-- Right: worker pipeline -->
+  <rect x="408" y="24" width="368" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+  <rect x="432" y="44" width="150" height="9" rx="4.5" fill="#1E2430" opacity="0.7"/>
+  <rect x="432" y="60" width="200" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="620" y="40" width="130" height="26" rx="13" fill="#34C749" opacity="0.1"/>
+  <rect x="636" y="50" width="70" height="7" rx="3.5" fill="#34C749" opacity="0.7"/>
+
+  <!-- Step 1: Campaign -->
+  <rect x="432" y="92" width="320" height="72" rx="12" fill="#F7F8FA" stroke="#EAEBEE" stroke-width="1"/>
+  <rect x="448" y="108" width="90" height="7" rx="3.5" fill="#1E2430" opacity="0.55"/>
+  <rect x="448" y="124" width="200" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="448" y="140" width="60" height="14" rx="7" fill="#5C7095" opacity="0.12"/>
+  <rect x="458" y="145" width="40" height="4" rx="2" fill="#5C7095" opacity="0.6"/>
+
+  <!-- Branch -->
+  <line x1="592" y1="164" x2="592" y2="188" stroke="#D7D9DE" stroke-width="1.5"/>
+  <line x1="592" y1="188" x2="470" y2="188" stroke="#D7D9DE" stroke-width="1.5"/>
+  <line x1="592" y1="188" x2="714" y2="188" stroke="#D7D9DE" stroke-width="1.5"/>
+  <line x1="470" y1="188" x2="470" y2="210" stroke="#D7D9DE" stroke-width="1.5"/>
+  <line x1="714" y1="188" x2="714" y2="210" stroke="#D7D9DE" stroke-width="1.5"/>
+
+  <!-- Step 2: SMS queue -->
+  <rect x="408" y="210" width="124" height="84" rx="12" fill="#FFFFFF" stroke="#5C7095" stroke-width="1.2" stroke-opacity="0.4"/>
+  <rect x="424" y="226" width="60" height="7" rx="3.5" fill="#1E2430" opacity="0.5"/>
+  <rect x="424" y="242" width="44" height="20" rx="6" fill="#5C7095" opacity="0.12"/>
+  <rect x="434" y="248" width="24" height="6" rx="3" fill="#5C7095" opacity="0.6"/>
+  <rect x="424" y="268" width="80" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="424" y="280" width="60" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+
+  <!-- Step 2: Email queue -->
+  <rect x="556" y="210" width="124" height="84" rx="12" fill="#FFFFFF" stroke="#5C7095" stroke-width="1.2" stroke-opacity="0.4"/>
+  <rect x="572" y="226" width="60" height="7" rx="3.5" fill="#1E2430" opacity="0.5"/>
+  <rect x="572" y="242" width="44" height="20" rx="6" fill="#5C7095" opacity="0.12"/>
+  <rect x="582" y="248" width="24" height="6" rx="3" fill="#5C7095" opacity="0.6"/>
+  <rect x="572" y="268" width="80" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="572" y="280" width="60" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+
+  <!-- Step 3: Workers -->
+  <line x1="470" y1="294" x2="470" y2="316" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+  <line x1="618" y1="294" x2="618" y2="316" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+
+  <rect x="408" y="316" width="124" height="60" rx="12" fill="#F0F2F6"/>
+  <rect x="424" y="332" width="70" height="7" rx="3.5" fill="#1E2430" opacity="0.5"/>
+  <rect x="424" y="348" width="80" height="6" rx="3" fill="#C8CBD0"/>
+  <circle cx="508" cy="348" r="8" fill="#34C749" opacity="0.15"/>
+  <path d="M504 348 l3 3 l6 -6" stroke="#34C749" stroke-width="1.5" fill="none"/>
+
+  <rect x="556" y="316" width="124" height="60" rx="12" fill="#F0F2F6"/>
+  <rect x="572" y="332" width="70" height="7" rx="3.5" fill="#1E2430" opacity="0.5"/>
+  <rect x="572" y="348" width="80" height="6" rx="3" fill="#C8CBD0"/>
+  <circle cx="656" cy="348" r="8" fill="#34C749" opacity="0.15"/>
+  <path d="M652 348 l3 3 l6 -6" stroke="#34C749" stroke-width="1.5" fill="none"/>
+
+  <!-- Merge to delivery -->
+  <line x1="470" y1="376" x2="470" y2="396" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+  <line x1="618" y1="376" x2="618" y2="396" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+  <line x1="470" y1="396" x2="618" y2="396" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+  <line x1="618" y1="396" x2="618" y2="416" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Delivered -->
+  <rect x="432" y="416" width="284" height="44" rx="12" fill="#34C749" opacity="0.08"/>
+  <circle cx="452" cy="438" r="9" fill="#34C749" opacity="0.2"/>
+  <path d="M448 438 l3 3 l6 -6" stroke="#34C749" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <rect x="470" y="432" width="120" height="7" rx="3.5" fill="#34C749" opacity="0.6"/>
+  <rect x="470" y="446" width="90" height="5" rx="2.5" fill="#C8CBD0"/>
+</svg>

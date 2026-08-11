@@ -218,7 +218,7 @@
 			class="nav-drawer-overlay"
 			onclick={closeMenu}
 			aria-label="Close menu"
-			tabindex={mobileMenuOpen ? '0' : '-1'}
+			tabindex={mobileMenuOpen ? 0 : -1}
 		></button>
 
 		<div class="nav-drawer-panel" class:nav-drawer-panel--dragging={isDragging}

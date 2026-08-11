@@ -6,15 +6,15 @@
 		title,
 		description,
 		tag,
-		href = '#',
-		imageUrl
+		imageUrl,
+		onSelect
 	}: {
 		number: string;
 		title: string;
 		description: string;
 		tag: string;
-		href?: string;
 		imageUrl?: string;
+		onSelect: () => void;
 	} = $props();
 </script>
 
@@ -27,17 +27,18 @@
 		</div>
 		<div class="card-image">
 			{#if imageUrl}
-				<img src={imageUrl} alt={title} />
-				<div class="image-overlay">
-					<svg class="overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-						<path d="M7 17l9-9M7 8h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</div>
+				<img src={imageUrl} alt="" />
 			{:else}
 				<div class="image-placeholder">
 					<span class="placeholder-label">{title}</span>
 				</div>
 			{/if}
+			<div class="image-overlay">
+				<span class="overlay-text">What I did</span>
+				<svg class="overlay-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+					<path d="M7 17l9-9M7 8h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
 		</div>
 	</div>
 	<div class="card-body">
@@ -46,23 +47,45 @@
 		<p class="card-description">{description}</p>
 		<div class="card-footer">
 			<TagPill>{tag}</TagPill>
-			<a {href} class="card-link">View case →</a>
 		</div>
 	</div>
+	<button
+		type="button"
+		class="card-hit-area"
+		onclick={onSelect}
+		aria-label={`View details for ${title}`}
+		aria-haspopup="dialog"
+	></button>
 </article>
 
 <style>
 	.project-card {
+		position: relative;
+		height: 100%;
 		background: var(--color-surface);
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-xl);
 		overflow: hidden;
+		cursor: pointer;
 		transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
 	}
 
-	.project-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+	/* Whole-card click target (real button for accessibility) */
+	.card-hit-area {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	.card-hit-area:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: -2px;
+		border-radius: var(--radius-xl);
 	}
 
 	.card-browser {
@@ -88,13 +111,10 @@
 	.browser-dot:nth-child(3) { background: #34c749; }
 
 	.card-image {
+		position: relative;
 		width: 100%;
 		aspect-ratio: 16 / 10;
 		overflow: hidden;
-	}
-
-	.card-image {
-		position: relative;
 	}
 
 	.card-image img {
@@ -102,31 +122,6 @@
 		height: 100%;
 		object-fit: cover;
 		transition: transform 0.6s var(--ease-out);
-	}
-
-	.project-card:hover .card-image img {
-		transform: scale(1.05);
-	}
-
-	.image-overlay {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(to top, rgba(22,24,25,0.4) 0%, transparent 60%);
-		display: flex;
-		align-items: flex-end;
-		justify-content: flex-end;
-		padding: 1rem;
-		opacity: 0;
-		transition: opacity 0.4s var(--ease-out);
-	}
-
-	.project-card:hover .image-overlay {
-		opacity: 1;
-	}
-
-	.overlay-icon {
-		color: #fff;
-		opacity: 0.8;
 	}
 
 	.image-placeholder {
@@ -143,6 +138,83 @@
 		font-size: var(--text-lg);
 		color: var(--color-muted);
 		font-style: italic;
+	}
+
+	/* Sliding overlay */
+	.image-overlay {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		background: linear-gradient(to top, rgba(22,24,25,0.85) 0%, rgba(22,24,25,0.35) 100%);
+		backdrop-filter: blur(2px);
+		-webkit-backdrop-filter: blur(2px);
+		opacity: 0;
+		transform: translateY(100%);
+		transition: transform 0.5s var(--ease-out), opacity 0.4s var(--ease-out);
+	}
+
+	.project-card:focus-within .image-overlay {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.overlay-text {
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #ffffff;
+		transform: translateY(8px);
+		opacity: 0;
+		transition: transform 0.4s var(--ease-out) 0.08s, opacity 0.3s var(--ease-out) 0.08s;
+	}
+
+	.project-card:focus-within .overlay-text {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	.overlay-icon {
+		color: #ffffff;
+		opacity: 0.85;
+		transform: translate(-6px, 8px);
+		transition: transform 0.4s var(--ease-out) 0.12s, opacity 0.3s var(--ease-out) 0.12s;
+	}
+
+	.project-card:focus-within .overlay-icon {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+
+	/* Hover interactions — only on devices that actually hover */
+	@media (hover: hover) {
+		.project-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+		}
+
+		.project-card:hover .card-image img {
+			transform: scale(1.05);
+		}
+
+		.project-card:hover .image-overlay {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.project-card:hover .overlay-text {
+			transform: translateY(0);
+			opacity: 1;
+		}
+
+		.project-card:hover .overlay-icon {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
 	}
 
 	.card-body {
@@ -181,18 +253,6 @@
 		gap: 1rem;
 	}
 
-	.card-link {
-		font-family: var(--font-body);
-		font-size: var(--text-sm);
-		font-weight: 500;
-		color: var(--color-accent);
-		transition: opacity 0.2s;
-	}
-
-	.card-link:hover {
-		opacity: 0.7;
-	}
-
 	@media (max-width: 600px) {
 		.card-body {
 			padding: 1.25rem;
@@ -204,6 +264,16 @@
 
 		.card-description {
 			font-size: var(--text-xs);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.project-card,
+		.card-image img,
+		.image-overlay,
+		.overlay-text,
+		.overlay-icon {
+			transition: none;
 		}
 	}
 </style>

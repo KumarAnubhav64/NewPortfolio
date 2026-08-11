@@ -1,0 +1,107 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F4F5F7"/>
+
+  <!-- Left: upload + waveform -->
+  <rect x="24" y="24" width="360" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+
+  <!-- Header -->
+  <rect x="24" y="24" width="360" height="52" rx="16" fill="#FFFFFF"/>
+  <rect x="44" y="44" width="70" height="8" rx="4" fill="#1E2430" opacity="0.7"/>
+  <circle cx="330" cy="50" r="6" fill="#34C749"/>
+
+  <!-- Upload card -->
+  <rect x="44" y="92" width="320" height="100" rx="14" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="6 5" fill="#FBFCFD"/>
+  <circle cx="204" cy="124" r="18" fill="#5C7095" opacity="0.1"/>
+  <path d="M198 124 l6 -6 l6 6 M204 118 v14" stroke="#5C7095" stroke-width="2" stroke-linecap="round"/>
+  <rect x="140" y="152" width="128" height="7" rx="3.5" fill="#C8CBD0"/>
+  <rect x="160" y="166" width="88" height="5" rx="2.5" fill="#C8CBD0" opacity="0.5"/>
+
+  <!-- Waveform player -->
+  <rect x="44" y="208" width="320" height="120" rx="14" fill="#F0F2F6"/>
+  <circle cx="76" cy="268" r="14" fill="#5C7095" opacity="0.15"/>
+  <polygon points="72,262 84,268 72,274" fill="#5C7095" opacity="0.7"/>
+  <!-- Wave bars -->
+  <rect x="104" y="280" width="6" height="22" rx="3" fill="#5C7095" opacity="0.35"/>
+  <rect x="116" y="272" width="6" height="30" rx="3" fill="#5C7095" opacity="0.5"/>
+  <rect x="128" y="264" width="6" height="38" rx="3" fill="#5C7095" opacity="0.7"/>
+  <rect x="140" y="258" width="6" height="44" rx="3" fill="#5C7095"/>
+  <rect x="152" y="266" width="6" height="36" rx="3" fill="#5C7095" opacity="0.8"/>
+  <rect x="164" y="274" width="6" height="28" rx="3" fill="#5C7095" opacity="0.55"/>
+  <rect x="176" y="280" width="6" height="22" rx="3" fill="#5C7095" opacity="0.35"/>
+  <rect x="188" y="272" width="6" height="30" rx="3" fill="#5C7095" opacity="0.5"/>
+  <rect x="200" y="262" width="6" height="40" rx="3" fill="#5C7095" opacity="0.7"/>
+  <rect x="212" y="256" width="6" height="46" rx="3" fill="#5C7095"/>
+  <rect x="224" y="266" width="6" height="36" rx="3" fill="#5C7095" opacity="0.75"/>
+  <rect x="236" y="276" width="6" height="26" rx="3" fill="#5C7095" opacity="0.45"/>
+  <rect x="248" y="282" width="6" height="20" rx="3" fill="#5C7095" opacity="0.3"/>
+  <!-- Timer -->
+  <rect x="104" y="300" width="60" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="280" y="300" width="60" height="5" rx="2.5" fill="#C8CBD0" opacity="0.5"/>
+
+  <!-- Transcript with speaker labels -->
+  <rect x="44" y="344" width="320" height="112" rx="14" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1"/>
+
+  <!-- Speaker label chips -->
+  <rect x="60" y="360" width="64" height="18" rx="9" fill="#5C7095" opacity="0.12"/>
+  <rect x="74" y="367" width="36" height="5" rx="2.5" fill="#5C7095" opacity="0.6"/>
+  <rect x="60" y="380" width="240" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="60" y="394" width="220" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+
+  <rect x="60" y="408" width="64" height="18" rx="9" fill="#34C749" opacity="0.12"/>
+  <rect x="74" y="415" width="36" height="5" rx="2.5" fill="#34C749" opacity="0.6"/>
+  <rect x="60" y="428" width="230" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="60" y="442" width="180" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+
+  <!-- Right: grounded Q&A -->
+  <rect x="408" y="24" width="368" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+  <rect x="432" y="44" width="120" height="9" rx="4.5" fill="#1E2430" opacity="0.7"/>
+  <rect x="432" y="60" width="160" height="6" rx="3" fill="#C8CBD0"/>
+
+  <!-- FAISS index chip -->
+  <rect x="600" y="40" width="140" height="26" rx="13" fill="#5C7095" opacity="0.1"/>
+  <rect x="616" y="50" width="60" height="7" rx="3.5" fill="#5C7095" opacity="0.6"/>
+  <rect x="680" y="50" width="40" height="7" rx="3.5" fill="#5C7095" opacity="0.35"/>
+
+  <!-- Question -->
+  <rect x="432" y="92" width="200" height="40" rx="12" fill="#5C7095" opacity="0.1"/>
+  <rect x="448" y="106" width="130" height="6" rx="3" fill="#5C7095" opacity="0.5"/>
+  <rect x="448" y="118" width="90" height="6" rx="3" fill="#5C7095" opacity="0.3"/>
+
+  <!-- Answer with citations -->
+  <rect x="432" y="148" width="320" height="160" rx="12" fill="#F0F2F6"/>
+  <rect x="448" y="164" width="200" height="7" rx="3.5" fill="#1E2430" opacity="0.6"/>
+  <rect x="448" y="180" width="280" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="448" y="194" width="260" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
+  <rect x="448" y="208" width="220" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
+
+  <!-- Citation chips -->
+  <rect x="448" y="228" width="110" height="22" rx="11" fill="#FFFFFF" stroke="#5C7095" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="462" y="235" width="56" height="5" rx="2.5" fill="#5C7095" opacity="0.7"/>
+  <rect x="524" y="235" width="24" height="5" rx="2.5" fill="#34C749" opacity="0.7"/>
+  <rect x="568" y="228" width="110" height="22" rx="11" fill="#FFFFFF" stroke="#5C7095" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="582" y="235" width="56" height="5" rx="2.5" fill="#5C7095" opacity="0.7"/>
+  <rect x="644" y="235" width="24" height="5" rx="2.5" fill="#34C749" opacity="0.7"/>
+
+  <rect x="448" y="260" width="120" height="6" rx="3" fill="#C8CBD0" opacity="0.4"/>
+  <rect x="448" y="274" width="100" height="6" rx="3" fill="#C8CBD0" opacity="0.4"/>
+
+  <!-- Source chunks -->
+  <rect x="432" y="324" width="80" height="7" rx="3.5" fill="#C8CBD0"/>
+
+  <rect x="432" y="344" width="320" height="52" rx="12" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1"/>
+  <circle cx="452" cy="370" r="6" fill="#5C7095" opacity="0.2"/>
+  <rect x="468" y="360" width="140" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="468" y="374" width="200" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+  <rect x="700" y="366" width="30" height="5" rx="2.5" fill="#34C749" opacity="0.7"/>
+
+  <rect x="432" y="404" width="320" height="52" rx="12" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1"/>
+  <circle cx="452" cy="430" r="6" fill="#5C7095" opacity="0.2"/>
+  <rect x="468" y="420" width="120" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="468" y="434" width="180" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+  <rect x="700" y="426" width="30" height="5" rx="2.5" fill="#34C749" opacity="0.7"/>
+
+  <!-- Relevance meter -->
+  <rect x="432" y="468" width="120" height="8" rx="4" fill="#EAEBEE"/>
+  <rect x="432" y="468" width="92" height="8" rx="4" fill="#34C749" opacity="0.7"/>
+</svg>

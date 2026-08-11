@@ -1,0 +1,120 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F4F5F7"/>
+
+  <!-- Left: search + results -->
+  <rect x="24" y="24" width="360" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+
+  <!-- Header -->
+  <rect x="44" y="44" width="120" height="9" rx="4.5" fill="#1E2430" opacity="0.7"/>
+  <rect x="44" y="60" width="190" height="6" rx="3" fill="#C8CBD0"/>
+
+  <!-- Search bar -->
+  <rect x="44" y="84" width="320" height="44" rx="22" fill="#F0F2F6"/>
+  <circle cx="68" cy="106" r="8" fill="#EAEBEE"/>
+  <path d="M64 106 l4 4 M60 102 a5 5 0 1 1 0 0.1" stroke="#C8CBD0" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <rect x="84" y="102" width="140" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+  <rect x="300" y="96" width="44" height="20" rx="10" fill="#34C749" opacity="0.12"/>
+  <rect x="312" y="103" width="20" height="6" rx="3" fill="#34C749" opacity="0.7"/>
+
+  <!-- Filter chips -->
+  <rect x="44" y="140" width="86" height="22" rx="11" fill="#5C7095" opacity="0.12"/>
+  <rect x="58" y="147" width="58" height="5" rx="2.5" fill="#5C7095" opacity="0.6"/>
+  <rect x="140" y="140" width="86" height="22" rx="11" fill="#F0F2F6"/>
+  <rect x="154" y="147" width="58" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="236" y="140" width="86" height="22" rx="11" fill="#F0F2F6"/>
+  <rect x="250" y="147" width="58" height="5" rx="2.5" fill="#C8CBD0"/>
+
+  <!-- Facility result 1 -->
+  <rect x="44" y="176" width="320" height="88" rx="14" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.03))"/>
+  <rect x="60" y="192" width="44" height="44" rx="10" fill="#34C749" opacity="0.12"/>
+  <rect x="68" y="200" width="20" height="20" rx="4" fill="#34C749" opacity="0.35"/>
+  <rect x="72" y="204" width="12" height="12" rx="3" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="116" y="194" width="120" height="7" rx="3.5" fill="#1E2430" opacity="0.6"/>
+  <rect x="116" y="208" width="160" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="116" y="222" width="60" height="16" rx="8" fill="#34C749" opacity="0.12"/>
+  <rect x="128" y="228" width="36" height="5" rx="2.5" fill="#34C749" opacity="0.6"/>
+  <rect x="280" y="222" width="64" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+
+  <!-- Facility result 2 -->
+  <rect x="44" y="276" width="320" height="88" rx="14" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.03))"/>
+  <rect x="60" y="292" width="44" height="44" rx="10" fill="#5C7095" opacity="0.1"/>
+  <rect x="68" y="300" width="20" height="20" rx="4" fill="#5C7095" opacity="0.3"/>
+  <rect x="72" y="304" width="12" height="12" rx="3" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="116" y="294" width="110" height="7" rx="3.5" fill="#1E2430" opacity="0.6"/>
+  <rect x="116" y="308" width="160" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="116" y="322" width="60" height="16" rx="8" fill="#5C7095" opacity="0.12"/>
+  <rect x="128" y="328" width="36" height="5" rx="2.5" fill="#5C7095" opacity="0.6"/>
+  <rect x="280" y="322" width="64" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+
+  <!-- Facility result 3 -->
+  <rect x="44" y="376" width="320" height="88" rx="14" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.03))"/>
+  <rect x="60" y="392" width="44" height="44" rx="10" fill="#FDBC40" opacity="0.12"/>
+  <rect x="68" y="400" width="20" height="20" rx="4" fill="#FDBC40" opacity="0.35"/>
+  <rect x="72" y="404" width="12" height="12" rx="3" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="116" y="394" width="100" height="7" rx="3.5" fill="#1E2430" opacity="0.6"/>
+  <rect x="116" y="408" width="150" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="116" y="422" width="60" height="16" rx="8" fill="#FDBC40" opacity="0.15"/>
+  <rect x="128" y="428" width="36" height="5" rx="2.5" fill="#FDBC40" opacity="0.6"/>
+  <rect x="280" y="422" width="64" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+
+  <!-- Right: map -->
+  <rect x="408" y="24" width="368" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+
+  <!-- Map canvas -->
+  <rect x="408" y="24" width="368" height="452" rx="16" fill="#F0F4F0"/>
+
+  <!-- Roads -->
+  <path d="M430 140 L770 160" stroke="#FFFFFF" stroke-width="10"/>
+  <path d="M440 440 L760 180" stroke="#FFFFFF" stroke-width="8"/>
+  <path d="M480 40 L500 480" stroke="#FFFFFF" stroke-width="8"/>
+  <path d="M620 40 L600 480" stroke="#FFFFFF" stroke-width="10"/>
+  <path d="M430 300 L770 320" stroke="#FFFFFF" stroke-width="6"/>
+
+  <!-- City blocks -->
+  <rect x="500" y="180" width="80" height="60" rx="6" fill="#E2E9E2"/>
+  <rect x="640" y="200" width="90" height="50" rx="6" fill="#E2E9E2"/>
+  <rect x="520" y="300" width="70" height="60" rx="6" fill="#E2E9E2"/>
+  <rect x="660" y="340" width="80" height="50" rx="6" fill="#E2E9E2"/>
+
+  <!-- Radius search circles -->
+  <circle cx="520" cy="240" r="90" fill="#34C749" opacity="0.06" stroke="#34C749" stroke-width="1.5" stroke-opacity="0.3"/>
+  <circle cx="520" cy="240" r="60" fill="#34C749" opacity="0.08" stroke="#34C749" stroke-width="1.5" stroke-opacity="0.35"/>
+
+  <!-- Search origin -->
+  <circle cx="520" cy="240" r="8" fill="#FFFFFF" stroke="#34C749" stroke-width="3"/>
+  <circle cx="520" cy="240" r="3" fill="#34C749"/>
+
+  <!-- Facility pins -->
+  <rect x="608" y="180" width="14" height="18" rx="4" fill="#34C749"/>
+  <path d="M615 202 l7 8 l-14 0 z" fill="#34C749"/>
+  <circle cx="615" cy="188" r="3" fill="#FFFFFF"/>
+
+  <rect x="676" y="300" width="14" height="18" rx="4" fill="#5C7095"/>
+  <path d="M683 322 l7 8 l-14 0 z" fill="#5C7095"/>
+  <circle cx="683" cy="308" r="3" fill="#FFFFFF"/>
+
+  <rect x="540" y="352" width="14" height="18" rx="4" fill="#FDBC40"/>
+  <path d="M547 374 l7 8 l-14 0 z" fill="#FDBC40"/>
+  <circle cx="547" cy="360" r="3" fill="#FFFFFF"/>
+
+  <!-- Selected facility card on map -->
+  <rect x="528" y="388" width="220" height="64" rx="12" fill="#FFFFFF" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.10))"/>
+  <rect x="544" y="402" width="90" height="6" rx="3" fill="#1E2430" opacity="0.6"/>
+  <rect x="544" y="416" width="160" height="5" rx="2.5" fill="#C8CBD0"/>
+  <rect x="544" y="430" width="40" height="12" rx="6" fill="#34C749" opacity="0.15"/>
+  <rect x="552" y="434" width="24" height="4" rx="2" fill="#34C749" opacity="0.7"/>
+  <rect x="716" y="406" width="20" height="20" rx="6" fill="#F0F2F6"/>
+  <path d="M722 412 l-2 2 l6 6 l2 -2 z M724 410 l2 -2 l2 2 l-2 2 z" fill="#C8CBD0"/>
+
+  <!-- PostGIS badge -->
+  <rect x="432" y="40" width="120" height="26" rx="13" fill="#FFFFFF" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <circle cx="448" cy="53" r="5" fill="#34C749" opacity="0.6"/>
+  <rect x="458" y="49" width="60" height="6" rx="3" fill="#5C7095" opacity="0.6"/>
+
+  <!-- Zoom controls -->
+  <rect x="712" y="40" width="40" height="80" rx="10" fill="#FFFFFF" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="726" y="54" width="12" height="2" rx="1" fill="#C8CBD0"/>
+  <rect x="726" y="72" width="12" height="2" rx="1" fill="#C8CBD0"/>
+  <line x1="732" y1="84" x2="732" y2="90" stroke="#EAEBEE" stroke-width="1"/>
+</svg>

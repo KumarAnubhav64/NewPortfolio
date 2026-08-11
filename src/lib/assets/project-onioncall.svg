@@ -1,0 +1,140 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F4F5F7"/>
+
+  <!-- Left panel: voice chat app -->
+  <rect x="24" y="24" width="360" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+
+  <!-- App top bar -->
+  <rect x="24" y="24" width="360" height="52" rx="16" fill="#FFFFFF"/>
+  <circle cx="48" cy="50" r="4" fill="#FC5F5F"/>
+  <circle cx="62" cy="50" r="4" fill="#FDBC40"/>
+  <circle cx="76" cy="50" r="4" fill="#34C749"/>
+  <rect x="96" y="46" width="80" height="8" rx="4" fill="#1E2430" opacity="0.7"/>
+  <rect x="330" y="40" width="36" height="20" rx="10" fill="#7D4698" opacity="0.12"/>
+  <circle cx="344" cy="50" r="4" fill="#7D4698" opacity="0.7"/>
+
+  <!-- Chat: peer bubble -->
+  <rect x="44" y="96" width="200" height="48" rx="12" fill="#F0F2F6"/>
+  <rect x="60" y="110" width="90" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="60" y="124" width="120" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
+  <circle cx="222" cy="106" r="7" fill="#7D4698" opacity="0.2"/>
+  <rect x="218" y="103" width="8" height="8" rx="2" fill="#7D4698" opacity="0.5"/>
+
+  <!-- Chat: self bubble -->
+  <rect x="180" y="156" width="180" height="40" rx="12" fill="#7D4698" opacity="0.1"/>
+  <rect x="196" y="170" width="100" height="6" rx="3" fill="#7D4698" opacity="0.5"/>
+  <rect x="196" y="182" width="60" height="6" rx="3" fill="#7D4698" opacity="0.3"/>
+
+  <!-- Voice waveform card -->
+  <rect x="44" y="216" width="320" height="120" rx="14" fill="#F7F3FA" stroke="#7D4698" stroke-width="1" stroke-opacity="0.25"/>
+  <rect x="60" y="232" width="60" height="7" rx="3.5" fill="#7D4698" opacity="0.6"/>
+  <rect x="60" y="246" width="100" height="5" rx="2.5" fill="#C8CBD0"/>
+
+  <!-- Waveform bars -->
+  <rect x="64" y="300" width="8" height="30" rx="4" fill="#7D4698" opacity="0.35"/>
+  <rect x="80" y="286" width="8" height="44" rx="4" fill="#7D4698" opacity="0.5"/>
+  <rect x="96" y="274" width="8" height="56" rx="4" fill="#7D4698" opacity="0.75"/>
+  <rect x="112" y="268" width="8" height="62" rx="4" fill="#7D4698"/>
+  <rect x="128" y="278" width="8" height="52" rx="4" fill="#7D4698" opacity="0.8"/>
+  <rect x="144" y="290" width="8" height="40" rx="4" fill="#7D4698" opacity="0.55"/>
+  <rect x="160" y="300" width="8" height="30" rx="4" fill="#7D4698" opacity="0.35"/>
+  <rect x="176" y="286" width="8" height="44" rx="4" fill="#7D4698" opacity="0.5"/>
+  <rect x="192" y="272" width="8" height="58" rx="4" fill="#7D4698" opacity="0.7"/>
+  <rect x="208" y="266" width="8" height="64" rx="4" fill="#7D4698" opacity="0.9"/>
+  <rect x="224" y="280" width="8" height="50" rx="4" fill="#7D4698" opacity="0.65"/>
+  <rect x="240" y="294" width="8" height="36" rx="4" fill="#7D4698" opacity="0.4"/>
+
+  <!-- Timer + PTT -->
+  <rect x="300" y="280" width="44" height="44" rx="22" fill="#7D4698"/>
+  <circle cx="322" cy="302" r="9" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="318" y="300" width="8" height="4" rx="2" fill="#7D4698"/>
+
+  <!-- Chat input -->
+  <rect x="44" y="360" width="320" height="44" rx="22" fill="#F0F2F6"/>
+  <rect x="64" y="378" width="120" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
+  <circle cx="340" cy="382" r="12" fill="#7D4698" opacity="0.15"/>
+  <rect x="334" y="378" width="12" height="8" rx="2" fill="#7D4698" opacity="0.6"/>
+
+  <!-- Status bar -->
+  <rect x="44" y="424" width="320" height="36" rx="10" fill="#F0F2F6"/>
+  <circle cx="64" cy="442" r="4" fill="#34C749"/>
+  <rect x="76" y="438" width="90" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="280" y="438" width="64" height="6" rx="3" fill="#7D4698" opacity="0.5"/>
+
+  <!-- Right panel: Tor circuit -->
+  <rect x="408" y="24" width="368" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+  <rect x="432" y="44" width="120" height="9" rx="4.5" fill="#1E2430" opacity="0.7"/>
+  <rect x="432" y="60" width="160" height="6" rx="3" fill="#C8CBD0"/>
+
+  <!-- Badge -->
+  <rect x="616" y="40" width="120" height="26" rx="13" fill="#7D4698" opacity="0.12"/>
+  <rect x="632" y="50" width="60" height="7" rx="3.5" fill="#7D4698" opacity="0.7"/>
+
+  <!-- Circuit title -->
+  <rect x="432" y="96" width="100" height="7" rx="3.5" fill="#C8CBD0"/>
+
+  <!-- Node: You -->
+  <rect x="432" y="120" width="160" height="56" rx="12" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="448" y="138" width="60" height="6" rx="3" fill="#1E2430" opacity="0.6"/>
+  <rect x="448" y="150" width="80" height="5" rx="2.5" fill="#C8CBD0"/>
+  <circle cx="572" cy="148" r="9" fill="#7D4698" opacity="0.15"/>
+  <rect x="568" y="143" width="8" height="10" rx="2" fill="#7D4698" opacity="0.6"/>
+
+  <!-- Connection -->
+  <line x1="592" y1="148" x2="630" y2="148" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- Node: Guard -->
+  <rect x="630" y="120" width="122" height="56" rx="12" fill="#FFFFFF" stroke="#7D4698" stroke-width="1.2" stroke-opacity="0.4" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="646" y="138" width="50" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="646" y="150" width="40" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+  <path d="M718 142 l8 4 l-8 4 l-8 -4 z" fill="#7D4698" opacity="0.6"/>
+  <rect x="706" y="144" width="14" height="10" rx="3" fill="#7D4698" opacity="0.4"/>
+
+  <!-- Connection -->
+  <line x1="691" y1="176" x2="691" y2="212" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="691" y1="212" x2="691" y2="240" stroke="#7D4698" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+
+  <!-- Padlock on circuit -->
+  <rect x="671" y="196" width="14" height="12" rx="3" fill="#34C749" opacity="0.5"/>
+  <path d="M674 196 v-3 a4 4 0 0 1 8 0 v3" stroke="#34C749" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+  <!-- Node: Relay -->
+  <rect x="630" y="240" width="122" height="56" rx="12" fill="#FFFFFF" stroke="#7D4698" stroke-width="1.2" stroke-opacity="0.4" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="646" y="258" width="56" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="646" y="270" width="44" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+  <circle cx="728" cy="268" r="6" fill="#7D4698" opacity="0.2"/>
+  <circle cx="728" cy="268" r="2.5" fill="#7D4698" opacity="0.6"/>
+
+  <!-- Connection down -->
+  <line x1="691" y1="296" x2="691" y2="332" stroke="#7D4698" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+
+  <!-- Padlock -->
+  <rect x="671" y="308" width="14" height="12" rx="3" fill="#34C749" opacity="0.5"/>
+  <path d="M674 308 v-3 a4 4 0 0 1 8 0 v3" stroke="#34C749" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+  <!-- Node: Exit -->
+  <rect x="630" y="332" width="122" height="56" rx="12" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="646" y="350" width="50" height="6" rx="3" fill="#1E2430" opacity="0.5"/>
+  <rect x="646" y="362" width="40" height="5" rx="2.5" fill="#C8CBD0"/>
+  <path d="M718 356 l8 4 l-8 4 l-8 -4 z" fill="#5C7095" opacity="0.5"/>
+
+  <!-- Connection -->
+  <line x1="630" y1="360" x2="600" y2="360" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- Node: Peer -->
+  <rect x="432" y="332" width="160" height="56" rx="12" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="448" y="350" width="60" height="6" rx="3" fill="#1E2430" opacity="0.6"/>
+  <rect x="448" y="362" width="80" height="5" rx="2.5" fill="#C8CBD0"/>
+  <circle cx="572" cy="360" r="9" fill="#7D4698" opacity="0.15"/>
+  <rect x="568" y="355" width="8" height="10" rx="2" fill="#7D4698" opacity="0.6"/>
+
+  <!-- Snowflake note -->
+  <rect x="432" y="404" width="320" height="48" rx="12" fill="#F0F2F6"/>
+  <path d="M452 428 l4 -8 l4 8 l8 4 l-8 4 l-4 8 l-4 -8 l-8 -4 z" fill="#5C7095" opacity="0.45"/>
+  <rect x="480" y="420" width="130" height="6" rx="3" fill="#C8CBD0"/>
+  <rect x="480" y="434" width="90" height="5" rx="2.5" fill="#C8CBD0" opacity="0.6"/>
+
+  <!-- E2E badge -->
+  <rect x="432" y="462" width="120" height="10" rx="5" fill="#34C749" opacity="0.15"/>
+</svg>
