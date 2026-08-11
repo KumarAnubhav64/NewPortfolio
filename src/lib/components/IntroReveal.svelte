@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import ScrollReveal from './ScrollReveal.svelte';
+	import HandDrawnAccent from './HandDrawnAccent.svelte';
 
 	let { onComplete }: { onComplete?: () => void } = $props();
 
 	let show = $state(false);
 	let revealing = $state(false);
 
-	const REVEAL_START = 2400; // ms — ink reveal length before the fade begins
-	const REVEAL_DURATION = 3000; // ms — the circular fade
+	const REVEAL_START = 1300; // ms — ink reveal length before the fade begins
+	const REVEAL_DURATION = 2000; // ms — the full-page fadeout
 
 	let startTimer: number | undefined;
 	let endTimer: number | undefined;
@@ -29,7 +30,7 @@
 		}, REVEAL_START);
 		endTimer = window.setTimeout(() => {
 			onComplete?.();
-		}, REVEAL_START + REVEAL_DURATION + 150);
+		}, REVEAL_START + REVEAL_DURATION + 200);
 	});
 
 	onDestroy(() => {
@@ -42,12 +43,21 @@
 	<div class="intro" class:intro--go={revealing}>
 		<!-- Act 1 — ink mood screen: same reveal as the main content -->
 		<div class="ink" aria-hidden="true">
-			<ScrollReveal class="ink-reveal">
-				<div class="ink__name">Kumar Anubhav</div>
-			</ScrollReveal>
-			<ScrollReveal delay={0.15} class="ink-reveal">
-				<span class="ink__tagline">thinker, tinkerer, builder</span>
-			</ScrollReveal>
+			<!-- Background layer: solid ink + soft accent glow. Zooms IN while the
+			     words zoom out — the dolly-zoom motion. -->
+			<div class="ink__bg"></div>
+
+			<!-- Foreground layer: the words. Zooms out + dissolves, lingering
+			     over the rushing background before it melts away. -->
+			<div class="ink__content">
+				<ScrollReveal class="ink-reveal">
+					<div class="ink__name">Kumar Anubhav</div>
+				</ScrollReveal>
+				<HandDrawnAccent variant="squiggle" class="ink-accent" />
+				<ScrollReveal delay={0.15} class="ink-reveal">
+					<span class="ink__tagline">thinker, tinkerer, builder</span>
+				</ScrollReveal>
+			</div>
 		</div>
 
 		<!-- The skip control lives outside the aria-hidden ink so assistive tech can reach it -->
@@ -56,12 +66,6 @@
 {/if}
 
 <style>
-	@property --open {
-		syntax: '<length>';
-		initial-value: 0px;
-		inherits: false;
-	}
-
 	.intro {
 		position: fixed;
 		inset: 0;
@@ -76,62 +80,80 @@
 	.ink {
 		position: absolute;
 		inset: 0;
-		--open: 0px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	/* The master reveal: the whole screen recedes slightly (zoom out) while it
+	   fades, and the background layer looms past the words inside it — dolly zoom. */
+	.intro--go .ink {
+		animation: ink-fade 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	}
+
+	@keyframes ink-fade {
+		from {
+			opacity: 1;
+			transform: scale(1);
+		}
+		to {
+			opacity: 0;
+			transform: scale(0.94);
+		}
+	}
+
+	/* ---------- Background layer (dolly IN) ---------- */
+	.ink__bg {
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(circle at 50% 42%, rgba(92, 112, 149, 0.17), transparent 62%),
+			var(--color-cta);
+	}
+
+	.intro--go .ink__bg {
+		animation: bg-dolly 2s var(--ease-out) forwards;
+	}
+
+	@keyframes bg-dolly {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.4);
+		}
+	}
+
+	/* ---------- Foreground layer (dolly OUT) ---------- */
+	.ink__content {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		gap: 1.1rem;
-		text-align: center;
-		background: var(--color-cta);
-		/* A soft circular hole opens from the center — the ink fades out in a circle */
-		-webkit-mask-image: radial-gradient(
-			circle at 50% 50%,
-			transparent 0,
-			transparent calc(var(--open) - 80px),
-			#000 var(--open),
-			#000 100%
-		);
-		mask-image: radial-gradient(
-			circle at 50% 50%,
-			transparent 0,
-			transparent calc(var(--open) - 80px),
-			#000 var(--open),
-			#000 100%
-		);
+		gap: 0.75rem;
 	}
 
-	.intro--go .ink {
-		animation:
-			ink-fade-open 3s linear forwards,
-			ink-fade-safe 3s var(--ease-out) forwards;
+	/* Words hold crisp while the background looms in, then dissolve out */
+	.intro--go .ink__content {
+		animation: content-dolly 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 	}
 
-	@keyframes ink-fade-open {
-		from {
-			--open: 0px;
-		}
-		/* Linear pacing + a ~72vmax target = the hole covers even square screens' corners
-		   only near the very end, so the whole 3s reads as one slow, even dissolve. */
-		to {
-			--open: 72vmax;
-		}
-	}
-
-	/* Safety net: browsers without @property (mask never opens) still fade the ink out. */
-	@keyframes ink-fade-safe {
+	@keyframes content-dolly {
 		0%,
-		85% {
+		45% {
 			opacity: 1;
+			transform: scale(1);
 		}
 		100% {
 			opacity: 0;
+			transform: scale(0.9);
 		}
 	}
 
 	:global(.ink-reveal) {
 		position: relative;
-		z-index: 1;
 	}
 
 	.ink__name {
@@ -151,13 +173,35 @@
 		font-weight: 500;
 		letter-spacing: 0.22em;
 		text-transform: uppercase;
-		color: rgba(244, 241, 233, 0.55);
+		color: rgba(244, 241, 233, 0.6);
+	}
+
+	/* Hand-drawn squiggle between name and tagline — drawn in after the name lands.
+	   :global because the class lives on the HandDrawnAccent component root (an SVG). */
+	:global(.ink-accent) {
+		position: relative;
+		margin: 0.25rem 0 0.15rem;
+	}
+
+	:global(.ink-accent path) {
+		opacity: 0.45;
+		stroke-dasharray: 100;
+		stroke-dashoffset: 100;
+		animation: draw-squiggle 0.8s var(--ease-out) 0.4s forwards;
+	}
+
+	@keyframes draw-squiggle {
+		to {
+			stroke-dashoffset: 0;
+		}
 	}
 
 	/* ---------- Skip ---------- */
+	/* Centered so the intro stays perfectly symmetric */
 	.skip {
 		position: absolute;
-		right: 1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
 		bottom: 1.5rem;
 		z-index: 2;
 		background: none;
@@ -170,7 +214,7 @@
 		text-transform: uppercase;
 		color: var(--color-muted);
 		opacity: 0;
-		animation: skip-in 0.5s var(--ease-out) 1.6s forwards;
+		animation: skip-in 0.4s var(--ease-out) 1.1s forwards;
 		transition: color 0.25s;
 	}
 
@@ -192,8 +236,16 @@
 
 	@media (prefers-reduced-motion: reduce) {
 		.ink,
+		.ink__bg,
+		.ink__content,
+		:global(.ink-accent),
+		:global(.ink-accent path),
 		.skip {
 			animation: none;
+		}
+
+		:global(.ink-accent path) {
+			stroke-dashoffset: 0;
 		}
 	}
 </style>
