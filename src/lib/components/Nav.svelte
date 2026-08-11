@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from './Button.svelte';
+	import Logo from './Logo.svelte';
 	import { navigateToSection } from '$lib/utils/smoothNavigate';
 
 	let mobileMenuOpen = $state(false);
@@ -173,8 +174,8 @@
 
 <nav class="nav" class:nav--scrolled={isScrolled} class:nav--menu-open={mobileMenuOpen} aria-label="Main navigation">
 	<div class="nav-inner container">
-		<a href="/" class="nav-logo">
-			<span class="logo-name">Kumar Anubhav</span>
+		<a href="/" class="nav-logo" aria-label="Kumar Anubhav — Home">
+			<Logo size={34} decorative />
 		</a>
 
 		<button
@@ -283,14 +284,6 @@
 		text-decoration: none;
 		margin-right: auto;
 		flex-shrink: 0;
-	}
-
-	.logo-name {
-		font-family: var(--font-display);
-		font-size: var(--text-lg);
-		font-weight: 600;
-		color: var(--color-ink);
-		letter-spacing: -0.02em;
 	}
 
 	.nav-links {

@@ -1,8 +1,12 @@
+<script lang="ts">
+	import Logo from './Logo.svelte';
+</script>
+
 <footer class="footer">
 	<div class="container">
 		<div class="footer-inner">
 			<div class="footer-brand">
-				<span class="logo-name">Kumar Anubhav</span>
+				<Logo size={28} />
 			</div>
 			<div class="footer-info">
 				<span class="footer-copyright">© {new Date().getFullYear()} Kumar Anubhav.</span>
@@ -29,14 +33,6 @@
 	.footer-brand {
 		display: flex;
 		align-items: center;
-	}
-
-	.logo-name {
-		font-family: var(--font-display);
-		font-size: var(--text-lg);
-		font-weight: 600;
-		color: var(--color-ink);
-		letter-spacing: -0.02em;
 	}
 
 	.footer-info {

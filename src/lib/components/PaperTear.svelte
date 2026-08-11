@@ -4,8 +4,6 @@
 
 	let { onComplete }: { onComplete?: () => void } = $props();
 
-	const STORAGE_KEY = 'np-paper-tear-shown';
-
 	type Pt = { x: number; y: number; px: number; py: number; pinned: boolean };
 	type Cn = { a: number; b: number; len: number; dead?: boolean };
 
@@ -49,7 +47,7 @@
 	const DAMPING = 0.98;
 	const DT = 1 / 60;
 	const RELAX_PASSES = 3;
-	const TEAR_FACTOR = 1.8; // constraint breaks when stretched beyond len * this
+	const TEAR_FACTOR = 2.0; // constraint breaks when stretched beyond len * this
 	const TORN_REVEAL = 0.22; // reveal when this fraction of constraints is torn
 	const DETACH_REVEAL = 0.3; // reveal when this fraction of the sheet has fallen off
 	const INTERACT_DELAY = 1400; // ms — ink act length before fabric is grabbable
@@ -59,13 +57,12 @@
 
 	onMount(() => {
 		if (typeof window === 'undefined') return;
-		const skip =
-			typeof sessionStorage !== 'undefined' && sessionStorage.getItem(STORAGE_KEY) !== null;
-		if (skip || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		// Always play the intro from the start on every load — only reduced-motion
+		// users skip it (accessibility), and the skip button is there as an escape.
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 			onComplete?.();
 			return;
 		}
-		sessionStorage.setItem(STORAGE_KEY, '1');
 		show = true;
 		tick().then(init);
 	});
@@ -88,7 +85,8 @@
 		buildCloth();
 		interactTimeout = window.setTimeout(() => {
 			interactive = true;
-			started = true; // fabric drops into place as the ink dissolves
+			// Fabric stays taut (physics off) until the user actually grabs it —
+			// it must not sag or fall on its own, like a curtain awaiting a pull.
 			capTimeout = window.setTimeout(reveal, CAP_AFTER_INTERACTIVE);
 		}, INTERACT_DELAY);
 		hintTimeout = window.setTimeout(() => {
@@ -176,26 +174,29 @@
 			}
 		}
 
-		// Tear: any constraint stretched past its limit snaps
-		const td2 = TEAR_FACTOR * TEAR_FACTOR;
-		let needFilter = false;
-		for (const c of constraints) {
-			const p1 = points[c.a];
-			const p2 = points[c.b];
-			const dx = p2.x - p1.x;
-			const dy = p2.y - p1.y;
-			if (dx * dx + dy * dy > c.len * c.len * td2) {
-				c.dead = true;
-				needFilter = true;
-				const row = Math.floor(Math.min(c.a, c.b) / cols);
-				if (row < minTornRow) minTornRow = row;
-				if (row > maxTornRow) maxTornRow = row;
+		// Tear: any constraint stretched past its limit snaps — but ONLY while the user is
+		// actively dragging. The settle and wind sway can never rip the sheet on their own.
+		if (mouse.down && interactive && !revealing) {
+			const td2 = TEAR_FACTOR * TEAR_FACTOR;
+			let needFilter = false;
+			for (const c of constraints) {
+				const p1 = points[c.a];
+				const p2 = points[c.b];
+				const dx = p2.x - p1.x;
+				const dy = p2.y - p1.y;
+				if (dx * dx + dy * dy > c.len * c.len * td2) {
+					c.dead = true;
+					needFilter = true;
+					const row = Math.floor(Math.min(c.a, c.b) / cols);
+					if (row < minTornRow) minTornRow = row;
+					if (row > maxTornRow) maxTornRow = row;
+				}
 			}
-		}
-		if (needFilter) {
-			const before = constraints.length;
-			constraints = constraints.filter((c) => !c.dead);
-			tornCount += before - constraints.length;
+			if (needFilter) {
+				const before = constraints.length;
+				constraints = constraints.filter((c) => !c.dead);
+				tornCount += before - constraints.length;
+			}
 		}
 	}
 
@@ -262,6 +263,7 @@
 
 	function onPointerMove(e: PointerEvent) {
 		if (!mouse.down || e.pointerId !== mouse.pointerId) return;
+		started = true; // fabric comes to life only on an actual drag — a tap never sets it off
 		const dx = e.clientX - lastPointer.x;
 		const dy = e.clientY - lastPointer.y;
 		dragDist += Math.sqrt(dx * dx + dy * dy);
@@ -278,8 +280,10 @@
 		mouse.pointerId = -1;
 	}
 
-	// If the user makes no progress for a while, let them in anyway
+	// If the user makes no progress for a while, let them in anyway.
+	// Only armed once there's real tearing progress — a bare tap won't start it.
 	function resetIdle() {
+		if (dragDist <= 0 && tornCount <= 0) return;
 		if (idleTimeout !== undefined) window.clearTimeout(idleTimeout);
 		idleTimeout = window.setTimeout(reveal, IDLE_AFTER_ACTIVITY);
 	}
@@ -410,7 +414,8 @@
 			acc -= DT;
 		}
 		frame++;
-		if (interactive && !revealing && frame % 20 === 0 && checkDismissal()) {
+		// Only ever reveal from tear progress once the user has actually grabbed the fabric
+		if (interacting && !revealing && frame % 20 === 0 && checkDismissal()) {
 			reveal();
 		}
 		draw();
@@ -447,7 +452,7 @@
 				<div class="pt-ink__name">Kumar Anubhav</div>
 			</ScrollReveal>
 			<ScrollReveal delay={0.15} class="pt-ink__reveal">
-				<span class="pt-ink__tagline">a passionate developer</span>
+				<span class="pt-ink__tagline">a thinker &amp; a tinkerer</span>
 			</ScrollReveal>
 		</div>
 

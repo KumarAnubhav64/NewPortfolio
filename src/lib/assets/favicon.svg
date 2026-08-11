@@ -1,14 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <style>
     @media (prefers-color-scheme: light) {
-      .bg { fill: #1E2430; }
-      .letter { fill: #FFFFFF; }
+      .tile { fill: #1e2430; }
+      .stroke { stroke: #f4f5f7; }
+      .accent { stroke: #a6b8db; }
     }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #FFFFFF; }
-      .letter { fill: #1E2430; }
+      .tile { fill: #f4f5f7; }
+      .stroke { stroke: #1e2430; }
+      .accent { stroke: #5c7095; }
     }
   </style>
-  <rect class="bg" width="32" height="32" rx="8" />
-  <text class="letter" x="16" y="21" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="600" letter-spacing="0.5">KA</text>
+  <rect class="tile" width="32" height="32" rx="7" />
+
+  <!-- Delicate inset ring -->
+  <rect class="accent" x="1.4" y="1.4" width="29.2" height="29.2" rx="6.4" fill="none" stroke-width="0.4" opacity="0.8" />
+
+  <!-- K -->
+  <path class="stroke" d="M6.3 7.8c.15 4.5.3 9.5.5 15.9" fill="none" stroke-width="1.7" stroke-linecap="round" />
+  <path class="stroke" d="M7.3 14.5C9.3 12.9 11.3 11.2 13.3 9.6" fill="none" stroke-width="1.7" stroke-linecap="round" />
+  <path class="stroke" d="M7.4 15.8c2.2 2.3 3.9 4.9 5.6 7.9" fill="none" stroke-width="1.7" stroke-linecap="round" />
+
+  <!-- A -->
+  <path class="stroke" d="M16.2 24.2c1.7-4.8 3.3-10.3 5-15.5" fill="none" stroke-width="1.7" stroke-linecap="round" />
+  <path class="stroke" d="M21.2 8.7c1.8 5.3 3.3 10.7 4.4 15.3" fill="none" stroke-width="1.7" stroke-linecap="round" />
+  <path class="stroke" d="M18.1 17.3c1.6-.5 3.3-.5 5.3 0" fill="none" stroke-width="1.7" stroke-linecap="round" />
+
+  <!-- Sparkle -->
+  <path class="accent" d="M24.2 3.7c-.2 1.1-1.1 2-2.2 2.2 1.1.2 2 1.1 2.2 2.2.2-1.1 1.1-2 2.2-2.2-1.1-.2-2-1.1-2.2-2.2z" fill="none" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Squiggle -->
+  <path class="accent" d="M9.7 27c1.7-1 3.3-1 4.7 0s3 1 4.3 0 2.7-.3 3.7 0" fill="none" stroke-width="0.9" stroke-linecap="round" opacity="0.9" />
 </svg>
