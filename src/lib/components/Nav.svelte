@@ -1,8 +1,15 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import Logo from './Logo.svelte';
+	import { page } from '$app/state';
 	import { navigateToSection } from '$lib/utils/smoothNavigate';
-	import { sectionLinks } from '$lib/sectionLinks';
+	import { sectionLinks, routeLinks } from '$lib/sectionLinks';
+
+	// Section links (#work, #skills…) only make sense on the single-page home.
+	// On sub-routes (e.g. /blog) show only the real route links.
+	const isHome = $derived(page.url.pathname === '/');
+	const navSectionLinks = $derived(isHome ? sectionLinks : []);
+	const drawerNavLinks = $derived([...navSectionLinks, ...routeLinks]);
 
 	let mobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
@@ -184,13 +191,16 @@
 
 		<!-- Desktop nav links -->
 		<div class="nav-links">
-			{#each sectionLinks as link}
+			{#each navSectionLinks as link}
 				<a
 					href={link.href}
 					class="nav-link"
 					class:nav-link--active={activeSection === link.href.slice(1)}
 					onclick={(e) => handleNavClick(e, link.href.slice(1))}
 				>{link.label}</a>
+			{/each}
+			{#each routeLinks as link}
+				<a href={link.href} class="nav-link">{link.label}</a>
 			{/each}
 		</div>
 
@@ -228,15 +238,25 @@
 			</div>
 
 			<div class="nav-drawer-links">
-				{#each sectionLinks as link, i}
-					<a
-						href={link.href}
-						class="nav-link nav-link--drawer"
-						class:nav-link--active={activeSection === link.href.slice(1)}
-						style={mobileMenuOpen ? `transition-delay: ${i * 0.06}s` : ''}
-						onclick={(e) => handleNavClick(e, link.href.slice(1))}
-						role="menuitem"
-					>{link.label}</a>
+				{#each drawerNavLinks as link, i}
+					{#if link.href.startsWith('#')}
+						<a
+							href={link.href}
+							class="nav-link nav-link--drawer"
+							class:nav-link--active={activeSection === link.href.slice(1)}
+							style={mobileMenuOpen ? `transition-delay: ${i * 0.06}s` : ''}
+							onclick={(e) => handleNavClick(e, link.href.slice(1))}
+							role="menuitem"
+						>{link.label}</a>
+					{:else}
+						<a
+							href={link.href}
+							class="nav-link nav-link--drawer"
+							style={mobileMenuOpen ? `transition-delay: ${i * 0.06}s` : ''}
+							onclick={() => closeMenu()}
+							role="menuitem"
+						>{link.label}</a>
+					{/if}
 				{/each}
 			</div>
 

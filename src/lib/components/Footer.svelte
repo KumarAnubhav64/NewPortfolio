@@ -1,7 +1,12 @@
 <script lang="ts">
 	import Logo from './Logo.svelte';
+	import { page } from '$app/state';
 	import { navigateToSection } from '$lib/utils/smoothNavigate';
 	import { sectionLinks } from '$lib/sectionLinks';
+
+	// Section links only exist on the home page; sub-routes (e.g. /blog) skip them.
+	const isHome = $derived(page.url.pathname === '/');
+	const links = $derived(isHome ? sectionLinks : []);
 
 	function handleSectionClick(e: MouseEvent, sectionId: string) {
 		e.preventDefault();
@@ -21,15 +26,17 @@
 			</div>
 		</div>
 
-		<nav class="footer-links" aria-label="Site sections">
-			{#each sectionLinks as link}
-				<a
-					href={link.href}
-					class="footer-link"
-					onclick={(e) => handleSectionClick(e, link.href.slice(1))}
-				>{link.label}</a>
-			{/each}
-		</nav>
+		{#if links.length > 0}
+			<nav class="footer-links" aria-label="Site sections">
+				{#each links as link}
+					<a
+						href={link.href}
+						class="footer-link"
+						onclick={(e) => handleSectionClick(e, link.href.slice(1))}
+					>{link.label}</a>
+				{/each}
+			</nav>
+		{/if}
 	</div>
 </footer>
 

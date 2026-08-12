@@ -6,3 +6,5 @@ export const sectionLinks: { label: string; href: string }[] = [
 	{ label: 'About', href: '#about' },
 	{ label: 'Contact', href: '#contact' }
 ];
+
+export const routeLinks: { label: string; href: string }[] = [{ label: 'Blog', href: '/blog' }];
