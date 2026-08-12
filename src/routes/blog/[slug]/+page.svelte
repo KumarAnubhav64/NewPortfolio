@@ -1,9 +1,52 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { Post } from '$lib/posts';
 
 	let { data }: { data: { post: Post; html: string } } = $props();
+
+	let articleEl: HTMLElement | undefined = $state();
+
+	onMount(async () => {
+		const blocks = articleEl?.querySelectorAll('.prose pre code.language-mermaid');
+		if (!blocks || blocks.length === 0) return;
+
+		// Lazy-load mermaid only when a post actually contains a diagram.
+		const { default: mermaid } = await import('mermaid');
+		mermaid.initialize({
+			startOnLoad: false,
+			theme: 'neutral',
+			securityLevel: 'strict',
+			fontFamily: 'var(--font-body)',
+			themeVariables: {
+				fontFamily: 'var(--font-body)',
+				primaryColor: '#e8ecf4',
+				primaryTextColor: '#1e2430',
+				primaryBorderColor: '#5c7095',
+				lineColor: '#5c7095',
+				secondaryColor: '#f4f5f7',
+				tertiaryColor: '#ffffff',
+				clusterBkg: '#f4f5f7',
+				clusterBorder: '#d7d9de'
+			}
+		});
+
+		// marked emits <pre><code class="language-mermaid">…</code></pre>;
+		// swap each for the .mermaid container mermaid.run() renders into.
+		blocks.forEach((codeEl) => {
+			const pre = codeEl.parentElement;
+			if (!pre) return;
+			const div = document.createElement('div');
+			div.className = 'mermaid';
+			div.textContent = codeEl.textContent ?? '';
+			pre.replaceWith(div);
+		});
+
+		await mermaid.run({
+			nodes: Array.from(articleEl?.querySelectorAll('.prose .mermaid') ?? [])
+		});
+	});
 </script>
 
 <svelte:head>
@@ -32,7 +75,7 @@
 				</div>
 			</header>
 
-			<div class="prose">{@html data.html}</div>
+			<div class="prose" bind:this={articleEl}>{@html data.html}</div>
 		</article>
 	</div>
 </main>
@@ -245,6 +288,18 @@
 	.prose :global(th) {
 		background: var(--color-bg-alt);
 		font-weight: 600;
+	}
+
+	/* mermaid diagrams */
+	.prose :global(.mermaid) {
+		display: flex;
+		justify-content: center;
+		background: var(--color-surface);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: 1.5rem 1rem;
+		margin: 1.75rem 0;
+		overflow-x: auto;
 	}
 
 	@media (max-width: 768px) {

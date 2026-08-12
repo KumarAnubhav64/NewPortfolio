@@ -21,6 +21,20 @@ The most productive constraint I've ever worked with is a 512MB memory cap. Puls
 
 The result isn't a worse product that happens to be free. It's a *faster, leaner* product. The memory cap forced me to know exactly what my stack loads, which is the kind of knowledge that pays off in every other context.
 
+```mermaid
+flowchart LR
+    subgraph Paid[The usual way — bills per scan]
+        P1[Paid model APIs] --> P2[$$ per photo/call]
+        P3[Managed vector DB] --> P4[$$ per month]
+        P5[Heavy ML frameworks] --> P6[$$ RAM to run]
+    end
+    subgraph Free[The $0 way]
+        F1[Open models on-device<br/>InsightFace / ONNX] --> F2[$0 forever]
+        F3[pgvector in existing<br/>Postgres] --> F4[$0]
+        F5[Hand-built, lazy-loaded<br/>~80MB boots] --> F6[$0]
+    end
+```
+
 ## The math that keeps it free
 
 The trick is that the expensive parts get eliminated, not budgeted for:
@@ -33,6 +47,18 @@ The trick is that the expensive parts get eliminated, not budgeted for:
 | Sleepy server instances | Serverless + durable retry queues (cold starts become a non-issue) |
 
 ## The hidden win: it forces honesty about scope
+
+The constraint chain, as a diagram:
+
+```mermaid
+flowchart TB
+    FreeTier[Free-tier cap] --> Constraint[Hard constraint]
+    Constraint --> Design[Forces a design decision]
+    Design --> Benefit[Unexpected benefit]
+    FreeTier -->|512MB RAM| C1[No langchain] --> B1[~80MB boots,<br/>10x faster startup]
+    FreeTier -->|per-call pricing| C2[Models on-device] --> B2[Photos never<br/>leave your machine]
+    FreeTier -->|cold starts| C3[Durable retry queue] --> B3[No nudge ever lost]
+```
 
 A $200/month architecture can hide a lot of waste. A $0 architecture can't. You learn quickly:
 

@@ -23,6 +23,20 @@ The product works in two phases that sound like one feature but are two complete
 
 The interesting part is that **the claim token is the credential**. There's no account, no phone number, no email. The link *is* the key. That keeps the privacy story simple: the uploader never sees anyone else's photos, and the person in the photo never needs to sign up.
 
+```mermaid
+flowchart LR
+    U[Upload photo] --> D[SCRFD detect faces]
+    D --> E[ArcFace embed 512-d]
+    E --> S[(pgvector<br/>HNSW index)]
+    E --> T[128-bit token<br/>per face]
+    T --> L[Share private link]
+    P[Person opens link] --> V[Selfie uploaded]
+    V --> M{Cosine sim ≥ 0.42?}
+    M -- no --> X[403 — no access]
+    M -- yes --> K[KNN search<br/>this library only]
+    K --> R[Every photo<br/>containing them]
+```
+
 ## Why it costs $0
 
 The usual way to build this is to call a paid face-recognition API per photo. At a few cents per scan, a real camera roll (say 5,000 photos) costs real money, and your users' faces are traveling to a third party.
@@ -48,11 +62,47 @@ A claim selfie becomes one query: "find all faces within cosine distance X of th
 
 The similarity threshold matters a lot. Too low and strangers can claim your photos; too high and the same person at different ages or angles gets locked out. I test the boundary continuously — there's a sample set in the repo that exercises both the "pass" and "reject" paths.
 
+```mermaid
+sequenceDiagram
+    participant U as Uploader
+    participant API as FastAPI
+    participant FE as FaceEngine
+    participant DB as pgvector
+
+    U->>API: POST /api/upload (photo)
+    API->>FE: detect faces + embed
+    FE-->>API: faces[vec512, bbox]
+    API->>DB: INSERT face + token
+    API-->>U: {faces, share_links[]}
+
+    P[Person] ->> API: POST /api/claim/token (selfie)
+    API->>FE: embed selfie
+    API->>DB: cosine sim vs stored face
+    alt sim >= 0.42
+        API->>DB: HNSW KNN search
+        DB-->>API: matching photos
+        API-->>P: 200 {photos[]}
+    else sim < 0.42
+        API-->>P: 403 rejected
+    end
+```
+
 ## Places and things, without GPS
 
 Phone photos carry EXIF GPS — but only for the *original* file. The moment you re-encode for the web, the GPS is gone. So the pipeline reads GPS **before** any transformation, clusters coordinates into places (~2 km radius), and for photos without GPS, falls back to the Places365 scene label. The result: a "Places" view that groups a beach trip even when the location data was stripped.
 
 Objects are simpler: SSD runs once per upload, tags get stored as JSON, and a "Things & animals" view is just a grouped query.
+
+```mermaid
+flowchart LR
+    U[Upload] --> O[SSD MobileNet<br/>COCO objects]
+    U --> Sc[Places365 scene]
+    U --> G[EXIF GPS<br/>read before re-encode]
+    O --> T[Things & animals]
+    Sc --> Pl[Places]
+    G --> Cl[Cluster ~2 km]
+    Cl --> Pl
+```
 
 ## Multi-tenancy that can't be bypassed
 

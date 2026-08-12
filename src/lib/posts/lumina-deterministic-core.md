@@ -29,6 +29,21 @@ timetable → deterministic core (real math: attendance %, gap detection, schedu
 
 The LLM's temperature is set low, it's given the facts as structured data, and it's explicitly instructed: **do not invent numbers, do not judge, only phrase.** The numbers come from code with tests. 705 of them, at 86% coverage.
 
+```mermaid
+flowchart TB
+    In[Timetable / commands] --> Core
+    subgraph Core[Deterministic core — real math, 705 tests]
+        AT[Attendance cliffs<br/>exact classes left]
+        GD[Gap detection<br/>real free blocks]
+        SC[Scheduling<br/>constraint satisfaction]
+        Brain[Brain idea inbox<br/>folders + tags]
+    end
+    Core --> Facts[Structured facts — verified numbers]
+    Facts --> LLM[LLM — phrases only, low temperature]
+    LLM --> Msg[Natural-language message]
+    style Core fill:#e8ecf4,stroke:#5c7095,stroke-width:2px
+```
+
 ## What the deterministic core actually computes
 
 - **Attendance cliffs:** the exact "classes left before 75%" arithmetic. The bot can tell you *today* that you have 3 free cuts left, not an estimate.
@@ -41,6 +56,16 @@ Every one of those is a pure function with a test. "Given this timetable, the an
 ## 11 commands, one `/scan` pipeline
 
 The surface is 11 umbrella commands (`/today`, `/goal`, `/timetable`, `/academic`, `/idea`…). The fun one is `/scan`: photograph your timetable, and a vision pipeline extracts the table into structured data — again feeding the deterministic core, not a fuzzy chat.
+
+```mermaid
+flowchart LR
+    Photo[Photo of timetable] --> OCR[Vision pipeline]
+    OCR --> Table[Structured table]
+    Table --> Core[Deterministic core]
+    Core --> Facts[Facts]
+    Facts --> LLM[LLM phrasing]
+    LLM --> Msg[Answer]
+```
 
 ## The resilience work no one sees
 
