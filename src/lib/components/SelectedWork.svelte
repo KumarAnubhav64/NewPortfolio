@@ -10,6 +10,7 @@
 	import luminaImg from '$lib/assets/project-lumina.svg';
 	import stegovaultImg from '$lib/assets/project-stegovault.svg';
 	import pulseragImg from '$lib/assets/project-pulserag.svg';
+	import peekabooImg from '$lib/assets/project-peekaboo.svg';
 	import aiAscentImg from '$lib/assets/project-ai-ascent.svg';
 	import intelliCoachImg from '$lib/assets/project-intellicoach.svg';
 	import intelliBizImg from '$lib/assets/project-intellibiz.svg';
@@ -86,12 +87,29 @@
 			],
 			stack: 'Python · FastAPI · FAISS · Groq Whisper · Redis · Docker',
 			links: [{ label: 'View on GitHub', href: 'https://github.com/KumarAnubhav64/PulseRAG' }]
+		},
+		{
+			number: '№ 005',
+			title: 'Peekaboo',
+			description:
+				'A face-recognition photo library that runs for $0 — upload a photo, every person gets a private link, and after a selfie challenge each person sees every photo containing them.',
+			tag: 'Fun · AI · Full Stack',
+			imageUrl: peekabooImg,
+			whatIDid: [
+				'Built a production-grade face pipeline: SCRFD detection + ArcFace 512-d embeddings, clustered into people, stored in pgvector with an HNSW index',
+				'Added the selfie challenge — a 128-bit claim token per face, cosine-similarity verification, then a KNN search that shows only your photos',
+				'Enriched every upload with COCO object tags (SSD MobileNet) and Places365 scenes, plus EXIF GPS clustering into places',
+				'Made it multi-tenant like Google Photos with email/password + Google SSO auth and tenant-scoped libraries',
+				'Kept it at literally $0: open-source on-device models, Neon Postgres + S3, and a one-command Docker self-host suite for your own NAS or external drive'
+			],
+			stack: 'FastAPI · React + TypeScript · InsightFace · ONNX · pgvector · Neon · Docker',
+			links: [{ label: 'View on GitHub', href: 'https://github.com/KumarAnubhav64/peekaboo' }]
 		}
 	];
 
 	const internshipProjects = [
 		{
-			number: '№ 005',
+			number: '№ 006',
 			title: 'AI Ascent',
 			description:
 				'Daaranya.ai\u2019s AI learning platform — course catalog with gamification, interactive vision labs (MediaPipe), and an in-browser code editor, built on React 19 + FastAPI.',
@@ -107,7 +125,7 @@
 			links: []
 		},
 		{
-			number: '№ 006',
+			number: '№ 007',
 			title: 'IntelliCoach',
 			description:
 				'An AI coaching platform with OMR answer-sheet checking, PDF-based question generation, tests & evaluation, class management, and teacher analytics.',
@@ -123,7 +141,7 @@
 			links: []
 		},
 		{
-			number: '№ 007',
+			number: '№ 008',
 			title: 'IntelliBiz',
 			description:
 				'An enterprise AI chatbot agent on LangGraph — Gemini with tool calling, org-scoped RAG search, topic alerts, and conversation-summary memory.',
@@ -139,7 +157,7 @@
 			links: []
 		},
 		{
-			number: '№ 008',
+			number: '№ 009',
 			title: 'Maples',
 			description:
 				'Aweelo — a senior-care discovery platform with PostGIS radius search, multi-tenant auth, and verified facility onboarding for families.',
@@ -155,7 +173,7 @@
 			links: []
 		},
 		{
-			number: '№ 009',
+			number: '№ 010',
 			title: 'Pine',
 			description:
 				'Healthcare task automation and notifications — bulk SMS/email campaigns with async workers, hardened through a production-readiness audit.',

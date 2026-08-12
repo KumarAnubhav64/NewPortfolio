@@ -74,11 +74,28 @@
 
 ---
 
+### 5. Peekaboo — Face-Recognition Photo Library 🫣
+
+**One-liner:** Upload a photo, every person in it gets a private link, and after a selfie challenge each person sees every photo containing them — a Google-Photos-style library that costs $0 to run.
+
+**What I built:**
+- **Production-grade face pipeline** — SCRFD detection + ArcFace 512-d embeddings, clustered into people, stored in `pgvector` with an HNSW index
+- **The classification challenge** — a 128-bit claim token per face, selfie verification by cosine similarity (≥0.42), then a KNN search that shows only your photos
+- **Auto-enrichment on every upload** — COCO object tags (SSD MobileNet ONNX), Places365 scenes, and EXIF GPS clustering into places
+- **Multi-tenant like Google Photos** — email/password + Google SSO, JWT in httpOnly cookies, every query tenant-scoped
+- **Actually $0 forever** — open-source on-device models (no API fees), Neon Postgres + Neon S3, HF Spaces + Vercel free tiers, plus a **one-command Docker self-host suite** for your own NAS or external hard drive
+
+**Stack:** FastAPI · React + TypeScript · Tailwind v4 + shadcn/ui · InsightFace · ONNX · pgvector · Neon · Docker Compose
+
+**Link:** [github.com/KumarAnubhav64/peekaboo](https://github.com/KumarAnubhav64/peekaboo)
+
+---
+
 ## Internship — Daaranya.ai (GitHub org: `HumpBack-2025`)
 
 > **Daaranya.ai** — AI-native edtech + enterprise AI platform ("The AI engine powering modern enterprises"). I built across its core product suite as a full-stack intern.
 
-### 5. Humpback — Daaranya.ai's Monorepo: Three Products 🐋
+### 6. Humpback — Daaranya.ai's Monorepo: Three Products 🐋
 
 **One-liner:** The Daaranya.ai monorepo housing **three products** — AI Ascent, IntelliCoach, and IntelliBiz — which I helped ship across frontends, FastAPI backends, and async workers.
 
@@ -97,7 +114,7 @@
 
 ---
 
-### 6. Maples — "Aweelo" Senior Care Discovery 🏥
+### 7. Maples — "Aweelo" Senior Care Discovery 🏥
 
 **One-liner:** A platform for finding senior care that inspires awe — connecting families with verified facilities through owner registration, facility claiming, and radius-based search.
 
@@ -113,7 +130,7 @@
 
 ---
 
-### 7. Pine — Healthcare Task Automation & Notifications 🩺
+### 8. Pine — Healthcare Task Automation & Notifications 🩺
 
 **One-liner:** A healthcare operations platform for task-automation workflows and bulk SMS/email notification campaigns, hardened through a production-readiness audit.
 
@@ -136,6 +153,7 @@
 | 2 | Lumina | AI / Product | ✅ Deployed | Telegram bot that negotiates your timetable & free time | GitHub |
 | 3 | StegoVault | Security | ✅ Done | Password vault hidden inside images (stego + AES) | GitHub |
 | 4 | PulseRAG | AI / RAG | ✅ Done | Audio → grounded, cited answers (Whisper + FAISS) | GitHub |
-| 5 | Humpback | Internship · Full stack | ✅ Shipped | Daaranya.ai monorepo: 3 products (AI Ascent, IntelliCoach, IntelliBiz) | GitHub org |
-| 6 | Maples | Internship · Full stack | 🚧 In progress | Senior-care discovery platform (Next.js + PostGIS) | GitHub org |
-| 7 | Pine | Internship · Full stack | ✅ Near-prod | Healthcare task automation & bulk notifications | GitHub org |
+| 5 | Peekaboo | Fun · AI / Full stack | ✅ Deployed | Face-recognition photo library that costs $0 (selfie challenge, places, things) | GitHub |
+| 6 | Humpback | Internship · Full stack | ✅ Shipped | Daaranya.ai monorepo: 3 products (AI Ascent, IntelliCoach, IntelliBiz) | GitHub org |
+| 7 | Maples | Internship · Full stack | 🚧 In progress | Senior-care discovery platform (Next.js + PostGIS) | GitHub org |
+| 8 | Pine | Internship · Full stack | ✅ Near-prod | Healthcare task automation & bulk notifications | GitHub org |
