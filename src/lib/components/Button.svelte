@@ -70,14 +70,14 @@
 	}
 
 	.btn--primary {
-		background: var(--color-cta);
+		background: var(--color-accent);
 		color: #fff;
-		border-color: var(--color-cta);
+		border-color: var(--color-accent);
 	}
 
 	.btn--primary:hover {
-		background: #2a2d33;
-		border-color: #2a2d33;
+		background: var(--color-accent-dark);
+		border-color: var(--color-accent-dark);
 	}
 
 	.btn--secondary {

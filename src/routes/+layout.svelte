@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Cursor from '$lib/components/Cursor.svelte';
 	import MusicPlayer from '$lib/components/MusicPlayer.svelte';
+	import ChatWidget from '$lib/components/ChatWidget.svelte';
 
 	let { children }: { children: import('svelte').Snippet } = $props();
 </script>
@@ -14,4 +15,5 @@
 
 <Cursor />
 <MusicPlayer />
+<ChatWidget />
 {@render children()}

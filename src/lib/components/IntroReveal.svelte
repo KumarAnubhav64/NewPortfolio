@@ -108,7 +108,7 @@
 		position: absolute;
 		inset: 0;
 		background:
-			radial-gradient(circle at 50% 42%, rgba(92, 112, 149, 0.17), transparent 62%),
+			radial-gradient(circle at 50% 42%, rgba(92, 111, 149, 0.17), transparent 62%),
 			var(--color-cta);
 	}
 

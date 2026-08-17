@@ -148,13 +148,15 @@ type-safe, <em class="headline-em">tested</em>, and ready for production.
 		display: block;
 		-webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 100%);
 		mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 100%);
+		filter: sepia(0.28) saturate(1.1) contrast(0.97);
 		opacity: 0.95;
-		transition: opacity 0.5s ease, transform 0.5s ease;
+		transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
 	}
 
 	.portrait-img:hover {
 		opacity: 1;
 		transform: scale(1.02);
+		filter: sepia(0.18) saturate(1.2) contrast(0.98);
 	}
 
 	.portrait-caption {

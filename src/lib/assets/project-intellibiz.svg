@@ -1,35 +1,35 @@
 <svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="800" height="500" fill="#F4F5F7"/>
+  <rect width="800" height="500" fill="#F6F1E8"/>
 
   <!-- Left: chat interface -->
-  <rect x="24" y="24" width="360" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+  <rect x="24" y="24" width="360" height="452" rx="16" fill="#FFFFFF" stroke="#DDD5C8" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
 
   <!-- Chat header -->
   <rect x="24" y="24" width="360" height="56" rx="16" fill="#FFFFFF"/>
-  <circle cx="52" cy="52" r="14" fill="#5C7095" opacity="0.15"/>
-  <path d="M46 46 l4 8 l8 4 l-8 4 l-4 8 l-4 -8 l-8 -4 l8 -4 z" fill="#5C7095" opacity="0.7"/>
-  <rect x="76" y="44" width="80" height="8" rx="4" fill="#1E2430" opacity="0.7"/>
+  <circle cx="52" cy="52" r="14" fill="#5C6F95" opacity="0.15"/>
+  <path d="M46 46 l4 8 l8 4 l-8 4 l-4 8 l-4 -8 l-8 -4 l8 -4 z" fill="#5C6F95" opacity="0.7"/>
+  <rect x="76" y="44" width="80" height="8" rx="4" fill="#2A2622" opacity="0.7"/>
   <rect x="76" y="58" width="110" height="5" rx="2.5" fill="#C8CBD0"/>
   <circle cx="352" cy="52" r="5" fill="#34C749"/>
 
   <!-- User question -->
-  <rect x="140" y="92" width="220" height="44" rx="12" fill="#5C7095" opacity="0.1"/>
-  <rect x="156" y="106" width="140" height="6" rx="3" fill="#5C7095" opacity="0.5"/>
-  <rect x="156" y="118" width="100" height="6" rx="3" fill="#5C7095" opacity="0.3"/>
+  <rect x="140" y="92" width="220" height="44" rx="12" fill="#5C6F95" opacity="0.1"/>
+  <rect x="156" y="106" width="140" height="6" rx="3" fill="#5C6F95" opacity="0.5"/>
+  <rect x="156" y="118" width="100" height="6" rx="3" fill="#5C6F95" opacity="0.3"/>
 
   <!-- Agent thinking / tool call -->
   <rect x="44" y="152" width="300" height="56" rx="12" fill="#F0F2F6"/>
-  <rect x="60" y="166" width="120" height="7" rx="3.5" fill="#1E2430" opacity="0.55"/>
+  <rect x="60" y="166" width="120" height="7" rx="3.5" fill="#2A2622" opacity="0.55"/>
   <rect x="60" y="182" width="220" height="6" rx="3" fill="#C8CBD0"/>
   <!-- Tool chip -->
-  <rect x="60" y="196" width="86" height="18" rx="9" fill="#FFFFFF" stroke="#5C7095" stroke-width="1" stroke-opacity="0.4"/>
-  <circle cx="72" cy="205" r="3.5" fill="#5C7095" opacity="0.6"/>
-  <rect x="80" y="202" width="50" height="5" rx="2.5" fill="#5C7095" opacity="0.6"/>
+  <rect x="60" y="196" width="86" height="18" rx="9" fill="#FFFFFF" stroke="#5C6F95" stroke-width="1" stroke-opacity="0.4"/>
+  <circle cx="72" cy="205" r="3.5" fill="#5C6F95" opacity="0.6"/>
+  <rect x="80" y="202" width="50" height="5" rx="2.5" fill="#5C6F95" opacity="0.6"/>
 
   <!-- Agent answer with citations -->
-  <rect x="44" y="224" width="300" height="130" rx="12" fill="#F7F8FA"/>
-  <rect x="60" y="240" width="160" height="7" rx="3.5" fill="#1E2430" opacity="0.6"/>
+  <rect x="44" y="224" width="300" height="130" rx="12" fill="#F6F1E8"/>
+  <rect x="60" y="240" width="160" height="7" rx="3.5" fill="#2A2622" opacity="0.6"/>
   <rect x="60" y="256" width="260" height="6" rx="3" fill="#C8CBD0"/>
   <rect x="60" y="270" width="240" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
   <rect x="60" y="284" width="200" height="6" rx="3" fill="#C8CBD0" opacity="0.6"/>
@@ -47,52 +47,52 @@
   <rect x="78" y="352" width="90" height="5" rx="2.5" fill="#C8CBD0"/>
 
   <!-- Suggested follow-ups -->
-  <rect x="44" y="380" width="120" height="26" rx="13" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1"/>
+  <rect x="44" y="380" width="120" height="26" rx="13" fill="#FFFFFF" stroke="#F3EEE5" stroke-width="1"/>
   <rect x="58" y="388" width="80" height="6" rx="3" fill="#C8CBD0"/>
-  <rect x="176" y="380" width="120" height="26" rx="13" fill="#FFFFFF" stroke="#EAEBEE" stroke-width="1"/>
+  <rect x="176" y="380" width="120" height="26" rx="13" fill="#FFFFFF" stroke="#F3EEE5" stroke-width="1"/>
   <rect x="190" y="388" width="80" height="6" rx="3" fill="#C8CBD0"/>
 
   <!-- Input bar -->
   <rect x="44" y="420" width="320" height="40" rx="20" fill="#F0F2F6"/>
   <rect x="64" y="437" width="140" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
-  <circle cx="338" cy="440" r="11" fill="#5C7095" opacity="0.15"/>
-  <rect x="332" y="436" width="12" height="8" rx="2" fill="#5C7095" opacity="0.6"/>
+  <circle cx="338" cy="440" r="11" fill="#5C6F95" opacity="0.15"/>
+  <rect x="332" y="436" width="12" height="8" rx="2" fill="#5C6F95" opacity="0.6"/>
 
   <!-- Right: agent pipeline -->
-  <rect x="408" y="24" width="368" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
-  <rect x="432" y="44" width="130" height="9" rx="4.5" fill="#1E2430" opacity="0.7"/>
+  <rect x="408" y="24" width="368" height="452" rx="16" fill="#FFFFFF" stroke="#DDD5C8" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+  <rect x="432" y="44" width="130" height="9" rx="4.5" fill="#2A2622" opacity="0.7"/>
   <rect x="432" y="60" width="190" height="6" rx="3" fill="#C8CBD0"/>
-  <rect x="620" y="40" width="130" height="26" rx="13" fill="#5C7095" opacity="0.1"/>
-  <rect x="636" y="50" width="70" height="7" rx="3.5" fill="#5C7095" opacity="0.6"/>
+  <rect x="620" y="40" width="130" height="26" rx="13" fill="#5C6F95" opacity="0.1"/>
+  <rect x="636" y="50" width="70" height="7" rx="3.5" fill="#5C6F95" opacity="0.6"/>
 
   <!-- State graph: input -->
-  <rect x="432" y="92" width="150" height="56" rx="12" fill="#F7F8FA" stroke="#EAEBEE" stroke-width="1"/>
-  <rect x="448" y="108" width="70" height="7" rx="3.5" fill="#1E2430" opacity="0.55"/>
+  <rect x="432" y="92" width="150" height="56" rx="12" fill="#F6F1E8" stroke="#F3EEE5" stroke-width="1"/>
+  <rect x="448" y="108" width="70" height="7" rx="3.5" fill="#2A2622" opacity="0.55"/>
   <rect x="448" y="122" width="110" height="6" rx="3" fill="#C8CBD0"/>
-  <circle cx="562" cy="120" r="8" fill="#5C7095" opacity="0.15"/>
-  <rect x="558" y="116" width="8" height="8" rx="2" fill="#5C7095" opacity="0.5"/>
+  <circle cx="562" cy="120" r="8" fill="#5C6F95" opacity="0.15"/>
+  <rect x="558" y="116" width="8" height="8" rx="2" fill="#5C6F95" opacity="0.5"/>
 
   <!-- Connector -->
-  <line x1="582" y1="120" x2="618" y2="120" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="582" y1="120" x2="618" y2="120" stroke="#DDD5C8" stroke-width="1.5" stroke-dasharray="5 4"/>
 
   <!-- Node: LLM -->
-  <rect x="618" y="92" width="134" height="56" rx="12" fill="#FFFFFF" stroke="#5C7095" stroke-width="1.2" stroke-opacity="0.4" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
-  <rect x="634" y="108" width="60" height="7" rx="3.5" fill="#1E2430" opacity="0.5"/>
+  <rect x="618" y="92" width="134" height="56" rx="12" fill="#FFFFFF" stroke="#5C6F95" stroke-width="1.2" stroke-opacity="0.4" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.04))"/>
+  <rect x="634" y="108" width="60" height="7" rx="3.5" fill="#2A2622" opacity="0.5"/>
   <rect x="634" y="122" width="90" height="6" rx="3" fill="#C8CBD0"/>
-  <path d="M716 112 l3 -6 l3 6 l6 3 l-6 3 l-3 6 l-3 -6 l-6 -3 z" fill="#5C7095" opacity="0.6"/>
+  <path d="M716 112 l3 -6 l3 6 l6 3 l-6 3 l-3 6 l-3 -6 l-6 -3 z" fill="#5C6F95" opacity="0.6"/>
 
   <!-- Branch -->
-  <line x1="685" y1="148" x2="685" y2="182" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <line x1="685" y1="182" x2="506" y2="182" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <line x1="685" y1="182" x2="716" y2="182" stroke="#D7D9DE" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <line x1="506" y1="182" x2="506" y2="208" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
-  <line x1="716" y1="182" x2="716" y2="208" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+  <line x1="685" y1="148" x2="685" y2="182" stroke="#DDD5C8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="685" y1="182" x2="506" y2="182" stroke="#DDD5C8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="685" y1="182" x2="716" y2="182" stroke="#DDD5C8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="506" y1="182" x2="506" y2="208" stroke="#5C6F95" stroke-width="1.5" opacity="0.5"/>
+  <line x1="716" y1="182" x2="716" y2="208" stroke="#5C6F95" stroke-width="1.5" opacity="0.5"/>
 
   <!-- Tool: Search (RAG) -->
   <rect x="432" y="208" width="148" height="72" rx="12" fill="#FFFFFF" stroke="#34C749" stroke-width="1.2" stroke-opacity="0.4"/>
   <circle cx="452" cy="230" r="9" fill="#34C749" opacity="0.15"/>
   <path d="M448 230 l4 4 M444 226 a5 5 0 1 1 0 0.1" stroke="#34C749" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  <rect x="468" y="226" width="70" height="7" rx="3.5" fill="#1E2430" opacity="0.5"/>
+  <rect x="468" y="226" width="70" height="7" rx="3.5" fill="#2A2622" opacity="0.5"/>
   <rect x="468" y="240" width="96" height="6" rx="3" fill="#C8CBD0"/>
   <!-- Retrieved chunks -->
   <rect x="448" y="256" width="116" height="14" rx="7" fill="#34C749" opacity="0.08"/>
@@ -102,26 +102,26 @@
   <rect x="640" y="208" width="112" height="72" rx="12" fill="#FFFFFF" stroke="#FDBC40" stroke-width="1.2" stroke-opacity="0.4"/>
   <circle cx="660" cy="230" r="9" fill="#FDBC40" opacity="0.2"/>
   <path d="M660 224 l4 6 l-8 0 z" fill="#FDBC40" opacity="0.7"/>
-  <rect x="676" y="226" width="60" height="7" rx="3.5" fill="#1E2430" opacity="0.5"/>
+  <rect x="676" y="226" width="60" height="7" rx="3.5" fill="#2A2622" opacity="0.5"/>
   <rect x="676" y="240" width="56" height="6" rx="3" fill="#C8CBD0"/>
   <rect x="652" y="256" width="88" height="14" rx="7" fill="#FDBC40" opacity="0.1"/>
   <rect x="662" y="261" width="48" height="4" rx="2" fill="#FDBC40" opacity="0.6"/>
 
   <!-- Merge -->
-  <line x1="506" y1="280" x2="506" y2="306" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
-  <line x1="696" y1="280" x2="696" y2="306" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
-  <line x1="506" y1="306" x2="696" y2="306" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
-  <line x1="696" y1="306" x2="696" y2="330" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+  <line x1="506" y1="280" x2="506" y2="306" stroke="#5C6F95" stroke-width="1.5" opacity="0.5"/>
+  <line x1="696" y1="280" x2="696" y2="306" stroke="#5C6F95" stroke-width="1.5" opacity="0.5"/>
+  <line x1="506" y1="306" x2="696" y2="306" stroke="#5C6F95" stroke-width="1.5" opacity="0.5"/>
+  <line x1="696" y1="306" x2="696" y2="330" stroke="#5C6F95" stroke-width="1.5" opacity="0.5"/>
 
   <!-- Memory node -->
-  <rect x="624" y="330" width="144" height="56" rx="12" fill="#F7F8FA" stroke="#EAEBEE" stroke-width="1"/>
-  <rect x="640" y="346" width="80" height="7" rx="3.5" fill="#1E2430" opacity="0.55"/>
+  <rect x="624" y="330" width="144" height="56" rx="12" fill="#F6F1E8" stroke="#F3EEE5" stroke-width="1"/>
+  <rect x="640" y="346" width="80" height="7" rx="3.5" fill="#2A2622" opacity="0.55"/>
   <rect x="640" y="360" width="100" height="6" rx="3" fill="#C8CBD0"/>
-  <circle cx="748" cy="358" r="8" fill="#5C7095" opacity="0.15"/>
-  <path d="M744 358 a4 4 0 1 1 8 0 l-1 3 h-6 z" fill="#5C7095" opacity="0.6"/>
+  <circle cx="748" cy="358" r="8" fill="#5C6F95" opacity="0.15"/>
+  <path d="M744 358 a4 4 0 1 1 8 0 l-1 3 h-6 z" fill="#5C6F95" opacity="0.6"/>
 
   <!-- Answer out -->
-  <line x1="696" y1="386" x2="696" y2="412" stroke="#5C7095" stroke-width="1.5" opacity="0.5"/>
+  <line x1="696" y1="386" x2="696" y2="412" stroke="#5C6F95" stroke-width="1.5" opacity="0.5"/>
   <rect x="432" y="412" width="284" height="44" rx="12" fill="#34C749" opacity="0.08"/>
   <circle cx="452" cy="434" r="9" fill="#34C749" opacity="0.2"/>
   <path d="M448 434 l3 3 l6 -6" stroke="#34C749" stroke-width="2" fill="none" stroke-linecap="round"/>

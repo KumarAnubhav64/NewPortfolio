@@ -14,14 +14,15 @@
 	--font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 	/* Colors */
-	--color-bg: #eaebee;
-	--color-bg-alt: #e4e6eb;
-	--color-ink: #1e2430;
-	--color-muted: #5b6270;
-	--color-accent: #5c7095;
+	--color-bg: #f3eee5;
+	--color-bg-alt: #ece5d8;
+	--color-ink: #2a2622;
+	--color-muted: #6e6358;
+	--color-accent: #5c6f95;
+	--color-accent-dark: #4b5d7f;
 	--color-surface: #ffffff;
 	--color-cta: #161819;
-	--color-border: #d7d9de;
+	--color-border: #ddd5c8;
 
 	/* Spacing */
 	--space-section: clamp(80px, 10vw, 140px);

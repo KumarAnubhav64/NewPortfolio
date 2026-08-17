@@ -1,6 +1,8 @@
 <script lang="ts">
-	const FORM_ID = 'xppadblq';
-	const FORM_ENDPOINT = `https://formspree.io/f/${FORM_ID}`;
+	const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
+	// Create your access key at https://web3forms.com (enter your email, key is sent to you).
+	// It's safe to ship in the HTML — Web3Forms treats it as an alias to your email.
+	const ACCESS_KEY = '7618bead-c80f-4eb8-aff9-595ed8230a4b';
 
 	let status = $state<'idle' | 'sending' | 'success' | 'error'>('idle');
 	let errorMessage = $state('');
@@ -19,7 +21,12 @@
 				headers: { Accept: 'application/json' }
 			});
 
-			if (response.ok) {
+			// Web3Forms returns 200 with { success: false } for some failures, so
+			// check the JSON flag rather than trusting the status code alone.
+			const data = await response.json().catch(() => null);
+			const ok = response.ok && (!data || data.success !== false);
+
+			if (ok) {
 				status = 'success';
 				form.reset();
 			} else {
@@ -43,9 +50,9 @@
 		</div>
 	{:else}
 		<form class="contact-form" onsubmit={handleSubmit} novalidate>
-			<input type="hidden" name="_subject" value="New message from your portfolio" />
+			<input type="hidden" name="access_key" value={ACCESS_KEY} />
 			<!-- Honeypot: real users never see this, bots fill it and get silently dropped -->
-			<input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+			<input type="text" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
 			<div class="form-row">
 				<div class="form-field">
@@ -188,7 +195,7 @@
 	.form-input:focus {
 		border-color: var(--color-accent);
 		background: var(--color-surface);
-		box-shadow: 0 0 0 3px rgba(92, 112, 149, 0.12);
+		box-shadow: 0 0 0 3px rgba(92, 111, 149, 0.12);
 	}
 
 	.form-textarea {
@@ -200,7 +207,7 @@
 	.form-select {
 		appearance: none;
 		-webkit-appearance: none;
-		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%235b6270' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%236e6358' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 		background-repeat: no-repeat;
 		background-position: right 1rem center;
 		padding-right: 2.5rem;
@@ -262,17 +269,17 @@
 		font-weight: 500;
 		letter-spacing: 0.02em;
 		cursor: pointer;
-		background: var(--color-cta);
+		background: var(--color-accent);
 		color: #fff;
-		border: 1.5px solid var(--color-cta);
+		border: 1.5px solid var(--color-accent);
 		line-height: 1;
 		transition: all 0.3s var(--ease-out);
 		width: 100%;
 	}
 
 	.form-button:hover:not(:disabled) {
-		background: #2a2d33;
-		border-color: #2a2d33;
+		background: var(--color-accent-dark);
+		border-color: var(--color-accent-dark);
 		transform: translateY(-1px);
 	}
 

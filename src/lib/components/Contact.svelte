@@ -187,8 +187,7 @@
 	.contact-social:hover {
 		transform: translateY(-3px);
 		border-color: var(--color-accent);
-		background: rgba(92, 112, 149, 0.08);
-		box-shadow: 0 10px 24px rgba(92, 112, 149, 0.12);
+		background: rgba(92, 111, 149, 0.08);
 	}
 
 	.contact-social:active {

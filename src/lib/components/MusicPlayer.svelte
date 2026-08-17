@@ -1,24 +1,30 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import { playlist } from '$lib/playlist';
 
 	/**
-	 * Small floating music player.
-	 * Starts automatically once the intro reveal finishes, at a quiet 30% volume.
-	 * If the browser blocks that autoplay, it retries on the first interaction.
+	 * Small floating music player for Kumar's favourite playlist.
+	 * Nothing plays automatically — visitors press play themselves.
 	 */
-	let {
-		src = '/audio/stranger-than-heaven.mp3',
-		title = 'Stranger Than Heaven'
-	}: { src?: string; title?: string } = $props();
-
-	const AMBIENT_VOLUME = 0.3;
+	const AMBIENT_VOLUME = 0.8;
 
 	let audio: HTMLAudioElement | undefined = $state();
+	let currentIndex = $state(0);
 	let playing = $state(false);
 	let failed = $state(false);
 
-	function playAmbient() {
-		if (!audio || failed || playing) return;
+	const track = $derived(playlist[currentIndex] ?? playlist[0]);
+
+	function loadTrack(index: number) {
+		if (!audio) return;
+		currentIndex = index;
+		failed = false;
+		audio.src = playlist[index].src;
+		audio.load();
+	}
+
+	function playCurrent() {
+		if (!audio || failed) return;
 		audio.volume = AMBIENT_VOLUME;
 		audio.play().catch(() => {});
 	}
@@ -28,12 +34,22 @@
 		if (playing) {
 			audio.pause();
 		} else {
-			audio.volume = AMBIENT_VOLUME;
-			audio.play().catch(() => {});
+			playCurrent();
 		}
 	}
 
-	let removeRetry = () => {};
+	function next() {
+		const nextIndex = (currentIndex + 1) % playlist.length;
+		loadTrack(nextIndex);
+		if (playing) playCurrent();
+	}
+
+	function prev() {
+		const prevIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+		loadTrack(prevIndex);
+		if (playing) playCurrent();
+	}
+
 	let wasPlayingBeforeHide = false;
 
 	onMount(() => {
@@ -46,41 +62,18 @@
 				}
 			} else if (wasPlayingBeforeHide) {
 				wasPlayingBeforeHide = false;
-				playAmbient();
+				playCurrent();
 			}
 		};
 		document.addEventListener('visibilitychange', onVisibilityChange);
 
-		// Start once the intro reveal is done.
-		const onIntroComplete = () => {
-			playAmbient();
-			// If autoplay was blocked (no gesture yet), retry on the first interaction.
-			const onFirstInteraction = () => {
-				window.removeEventListener('pointerdown', onFirstInteraction);
-				window.removeEventListener('keydown', onFirstInteraction);
-				window.removeEventListener('touchstart', onFirstInteraction);
-				playAmbient();
-			};
-			window.addEventListener('pointerdown', onFirstInteraction);
-			window.addEventListener('keydown', onFirstInteraction);
-			window.addEventListener('touchstart', onFirstInteraction);
-			removeRetry = () => {
-				window.removeEventListener('pointerdown', onFirstInteraction);
-				window.removeEventListener('keydown', onFirstInteraction);
-				window.removeEventListener('touchstart', onFirstInteraction);
-			};
-		};
-
-		window.addEventListener('intro:complete', onIntroComplete);
 		return () => {
-			window.removeEventListener('intro:complete', onIntroComplete);
 			document.removeEventListener('visibilitychange', onVisibilityChange);
-			removeRetry();
 		};
 	});
 
 	onDestroy(() => {
-		removeRetry();
+		audio?.pause();
 	});
 </script>
 
@@ -93,12 +86,19 @@
 >
 	<audio
 		bind:this={audio}
-		{src}
-		loop
+		src={track.src}
 		preload="none"
 		onplay={() => (playing = true)}
 		onpause={() => (playing = false)}
 		onerror={() => (failed = true)}
+		onended={() => {
+			// Advance through the playlist; stop after the last track finishes.
+			if (currentIndex < playlist.length - 1) {
+				next();
+			} else {
+				playing = false;
+			}
+		}}
 	></audio>
 
 	<button
@@ -120,9 +120,32 @@
 		{/if}
 	</button>
 
+	{#if playlist.length > 1}
+		<div class="player__controls">
+			<button type="button" class="player__step" onclick={prev} aria-label="Previous track" title="Previous track">
+				<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+					<path d="M6 5h2v14H6zM18 5v14l-9-7z" />
+				</svg>
+			</button>
+			<button type="button" class="player__step" onclick={next} aria-label="Next track" title="Next track">
+				<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+					<path d="M16 5h2v14h-2zM6 5v14l9-7z" />
+				</svg>
+			</button>
+		</div>
+	{/if}
+
 	<div class="player__meta">
-		<span class="player__title">{title}</span>
-		<span class="player__status">{failed ? 'Track missing' : playing ? 'Playing' : 'Paused'}</span>
+		<span class="player__title">{track.title}</span>
+		<span class="player__status">
+			{#if failed}
+				Track missing
+			{:else if playlist.length > 1}
+				{currentIndex + 1} of {playlist.length} · {playing ? 'Playing' : 'Paused'}
+			{:else}
+				{playing ? 'Playing' : 'Paused'}
+			{/if}
+		</span>
 	</div>
 
 	<div class="player__eq" aria-hidden="true">
@@ -165,7 +188,7 @@
 	/* …that opens into the full pill on hover (or when focused) */
 	.player:hover,
 	.player:focus-within {
-		max-width: 380px;
+		max-width: 460px;
 		border-radius: 999px;
 		padding: 6px 1.25rem 6px 6px;
 		border-color: var(--color-accent);
@@ -213,9 +236,53 @@
 		outline-offset: 3px;
 	}
 
-	/* A gentle halo while playing */
-	.player--playing .player__toggle {
-		box-shadow: 0 0 0 5px rgba(92, 112, 149, 0.14);
+
+
+	/* ---------- Prev / next ---------- */
+	.player__controls {
+		flex-shrink: 0;
+		display: flex;
+		gap: 0.25rem;
+		opacity: 0;
+		transform: translateX(-8px);
+		transition:
+			opacity 0.55s ease 0.3s,
+			transform 0.55s ease 0.3s;
+	}
+
+	.player:hover .player__controls,
+	.player:focus-within .player__controls {
+		opacity: 1;
+		transform: none;
+	}
+
+	.player__step {
+		flex-shrink: 0;
+		width: 24px;
+		height: 24px;
+		border: none;
+		border-radius: 50%;
+		background: var(--color-bg-alt);
+		color: var(--color-muted);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition:
+			background-color 0.2s,
+			color 0.2s,
+			transform 0.2s;
+	}
+
+	.player__step:hover {
+		background: var(--color-accent);
+		color: #fff;
+		transform: scale(1.08);
+	}
+
+	.player__step:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
 	}
 
 	/* ---------- Track meta ---------- */
@@ -327,12 +394,13 @@
 	/* Touch devices have no hover, so keep it open as the full pill */
 	@media (hover: none) {
 		.player {
-			max-width: 380px;
+			max-width: 460px;
 			border-radius: 999px;
 			padding: 6px 1.25rem 6px 6px;
 		}
 
 		.player__meta,
+		.player__controls,
 		.player__eq {
 			opacity: 1;
 			transform: none;
@@ -345,6 +413,7 @@
 		}
 
 		.player__meta,
+		.player__controls,
 		.player__eq {
 			transition: none;
 		}

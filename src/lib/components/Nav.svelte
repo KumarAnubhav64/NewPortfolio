@@ -273,7 +273,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		background: rgba(234, 235, 238, 0.9);
+		background: rgba(243, 238, 229, 0.9);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		transition: box-shadow 0.4s var(--ease-out), padding 0.3s var(--ease-out);
@@ -334,12 +334,12 @@
 	}
 
 	.nav-link--active {
-		color: var(--color-ink);
+		color: var(--color-accent);
 	}
 
 	.nav-link--active::after {
 		width: 100%;
-		background: var(--color-ink);
+		background: var(--color-accent);
 	}
 
 	.nav-actions {

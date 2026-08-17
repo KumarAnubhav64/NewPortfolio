@@ -2,8 +2,8 @@
   <defs>
     <!-- Soft accent glow, echoing the intro screen's halo behind the name -->
     <radialGradient id="ink-glow" cx="50%" cy="44%" r="65%">
-      <stop offset="0%" stop-color="#5c7095" stop-opacity="0.32" />
-      <stop offset="100%" stop-color="#5c7095" stop-opacity="0" />
+      <stop offset="0%" stop-color="#5c6f95" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#5c6f95" stop-opacity="0" />
     </radialGradient>
   </defs>
 

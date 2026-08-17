@@ -94,7 +94,7 @@
 		height: auto;
 		display: block;
 		/* Mute the photos into the site's cool gray-blue palette */
-		filter: saturate(0.45) contrast(0.9) brightness(1.03);
+		filter: sepia(0.3) saturate(0.95) contrast(0.95) brightness(1.02);
 		transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
 	}
 
@@ -103,7 +103,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: rgba(92, 112, 149, 0.16);
+		background: rgba(92, 111, 149, 0.14);
 		mix-blend-mode: soft-light;
 		pointer-events: none;
 	}
@@ -135,7 +135,7 @@
 
 		.hobby-card:hover .hobby-image img {
 			transform: scale(1.03);
-			filter: saturate(0.58) contrast(0.92) brightness(1.03);
+			filter: sepia(0.18) saturate(1.1) contrast(0.95) brightness(1.02);
 		}
 	}
 

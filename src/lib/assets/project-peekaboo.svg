@@ -1,37 +1,37 @@
 <svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="800" height="500" fill="#F4F5F7"/>
+  <rect width="800" height="500" fill="#F6F1E8"/>
 
   <!-- App frame -->
-  <rect x="24" y="24" width="752" height="452" rx="16" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
+  <rect x="24" y="24" width="752" height="452" rx="16" fill="#FFFFFF" stroke="#DDD5C8" stroke-width="1" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.04))"/>
 
   <!-- Top bar: brand + search -->
   <rect x="24" y="24" width="752" height="56" rx="16" fill="#FFFFFF"/>
   <rect x="24" y="64" width="752" height="16" fill="#FFFFFF"/>
-  <circle cx="56" cy="52" r="8" fill="#5C7095" opacity="0.25"/>
-  <rect x="72" y="46" width="54" height="7" rx="3.5" fill="#1E2430" opacity="0.7"/>
+  <circle cx="56" cy="52" r="8" fill="#5C6F95" opacity="0.25"/>
+  <rect x="72" y="46" width="54" height="7" rx="3.5" fill="#2A2622" opacity="0.7"/>
 
   <!-- Search pill -->
   <rect x="200" y="38" width="300" height="28" rx="14" fill="#F0F2F6"/>
-  <circle cx="218" cy="52" r="5" stroke="#5C7095" stroke-width="2"/>
-  <rect x="232" y="45" width="120" height="7" rx="3.5" fill="#5C7095" opacity="0.6"/>
-  <rect x="452" y="44" width="28" height="9" rx="4.5" fill="#5C7095" opacity="0.15"/>
+  <circle cx="218" cy="52" r="5" stroke="#5C6F95" stroke-width="2"/>
+  <rect x="232" y="45" width="120" height="7" rx="3.5" fill="#5C6F95" opacity="0.6"/>
+  <rect x="452" y="44" width="28" height="9" rx="4.5" fill="#5C6F95" opacity="0.15"/>
 
   <!-- Face strip -->
   <rect x="44" y="92" width="712" height="64" rx="14" fill="#F0F2F6"/>
   <text x="64" y="116" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">J</text>
-  <circle cx="104" cy="124" r="22" fill="#5C7095" opacity="0.85"/>
+  <circle cx="104" cy="124" r="22" fill="#5C6F95" opacity="0.85"/>
   <text x="96" y="129" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">M</text>
   <circle cx="160" cy="124" r="22" fill="#B98AE0" opacity="0.8"/>
   <text x="153" y="129" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">A</text>
-  <circle cx="216" cy="124" r="22" fill="#5C7095" opacity="0.5"/>
+  <circle cx="216" cy="124" r="22" fill="#5C6F95" opacity="0.5"/>
   <text x="210" y="129" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">S</text>
   <circle cx="272" cy="124" r="22" fill="#7FA98E" opacity="0.8"/>
   <text x="265" y="129" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">K</text>
-  <circle cx="328" cy="124" r="22" fill="none" stroke="#5C7095" stroke-width="1.5" stroke-dasharray="3 3"/>
-  <text x="322" y="129" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#5C7095">+</text>
-  <rect x="380" y="116" width="86" height="16" rx="8" fill="#5C7095" opacity="0.12"/>
-  <rect x="390" y="121" width="66" height="6" rx="3" fill="#5C7095" opacity="0.7"/>
+  <circle cx="328" cy="124" r="22" fill="none" stroke="#5C6F95" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="322" y="129" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#5C6F95">+</text>
+  <rect x="380" y="116" width="86" height="16" rx="8" fill="#5C6F95" opacity="0.12"/>
+  <rect x="390" y="121" width="66" height="6" rx="3" fill="#5C6F95" opacity="0.7"/>
 
   <!-- Masonry photo grid -->
   <!-- Photo 1: landscape beach -->
@@ -39,7 +39,7 @@
   <rect x="44" y="172" width="228" height="140" rx="12" fill="url(#sea)" opacity="0.9"/>
   <path d="M44 250 C 90 232, 140 262, 190 244 L 190 312 L 44 312 Z" fill="#E8D9A8" opacity="0.9"/>
   <circle cx="150" cy="206" r="16" fill="#FFD93D" opacity="0.95"/>
-  <rect x="56" y="280" width="70" height="14" rx="7" fill="#5C7095" opacity="0.8"/>
+  <rect x="56" y="280" width="70" height="14" rx="7" fill="#5C6F95" opacity="0.8"/>
   <text x="63" y="290" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#FFFFFF">beach · 2024</text>
 
   <!-- Photo 2: portrait with face badge -->
@@ -47,16 +47,16 @@
   <circle cx="376" cy="252" r="34" fill="#F1D9C4"/>
   <path d="M376 196 c 14 0 26 8 30 20 c -8 4 -20 6 -30 6 c -10 0 -22 -2 -30 -6 c 4 -12 16 -20 30 -20 z" fill="#5A4232" opacity="0.8"/>
   <path d="M376 300 c -34 0 -62 26 -68 60 c 20 18 46 28 68 28 c 22 0 48 -10 68 -28 c -6 -34 -34 -60 -68 -60 z" fill="#7E5A43"/>
-  <rect x="300" y="190" width="110" height="18" rx="9" fill="#5C7095" opacity="0.9"/>
+  <rect x="300" y="190" width="110" height="18" rx="9" fill="#5C6F95" opacity="0.9"/>
   <text x="315" y="203" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#FFFFFF">Person 1 · 12</text>
 
   <!-- Photo 3: small square with dog -->
   <rect x="480" y="172" width="276" height="148" rx="12" fill="#D6E2D8"/>
   <rect x="620" y="232" width="96" height="88" rx="10" fill="#8A6A4F"/>
   <rect x="556" y="222" width="34" height="30" rx="8" fill="#8A6A4F"/>
-  <circle cx="562" cy="238" r="3" fill="#1E2430"/>
-  <circle cx="586" cy="238" r="3" fill="#1E2430"/>
-  <path d="M558 250 q 12 10 26 0" stroke="#1E2430" stroke-width="2" fill="none"/>
+  <circle cx="562" cy="238" r="3" fill="#2A2622"/>
+  <circle cx="586" cy="238" r="3" fill="#2A2622"/>
+  <path d="M558 250 q 12 10 26 0" stroke="#2A2622" stroke-width="2" fill="none"/>
   <rect x="494" y="288" width="72" height="14" rx="7" fill="#7FA98E" opacity="0.85"/>
   <text x="501" y="298" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#FFFFFF">dog · park</text>
 
@@ -65,17 +65,17 @@
   <rect x="480" y="336" width="276" height="120" rx="12" fill="url(#mount)" opacity="0.85"/>
   <path d="M480 424 L 540 380 L 590 416 L 640 372 L 700 420 L 756 396 L 756 456 L 480 456 Z" fill="#7E94B8" opacity="0.8"/>
   <circle cx="700" cy="366" r="14" fill="#FFD93D" opacity="0.9"/>
-  <rect x="492" y="428" width="64" height="14" rx="7" fill="#5C7095" opacity="0.8"/>
+  <rect x="492" y="428" width="64" height="14" rx="7" fill="#5C6F95" opacity="0.8"/>
   <text x="498" y="438" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#FFFFFF">trip · 42</text>
 
   <!-- Bottom-left photo: receipt/things tile -->
   <rect x="44" y="328" width="228" height="128" rx="12" fill="#EDE9E0"/>
-  <rect x="90" y="352" width="136" height="84" rx="8" fill="#FFFFFF" stroke="#D7D9DE" stroke-width="1.5"/>
+  <rect x="90" y="352" width="136" height="84" rx="8" fill="#FFFFFF" stroke="#DDD5C8" stroke-width="1.5"/>
   <rect x="106" y="368" width="104" height="6" rx="3" fill="#C8CBD0"/>
   <rect x="106" y="382" width="80" height="6" rx="3" fill="#C8CBD0" opacity="0.7"/>
   <rect x="106" y="396" width="92" height="6" rx="3" fill="#C8CBD0" opacity="0.7"/>
   <rect x="106" y="410" width="60" height="6" rx="3" fill="#C8CBD0" opacity="0.5"/>
-  <rect x="56" y="436" width="72" height="14" rx="7" fill="#5C7095" opacity="0.8"/>
+  <rect x="56" y="436" width="72" height="14" rx="7" fill="#5C6F95" opacity="0.8"/>
   <text x="63" y="446" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#FFFFFF">receipts · 8</text>
 
   <!-- Gradients -->

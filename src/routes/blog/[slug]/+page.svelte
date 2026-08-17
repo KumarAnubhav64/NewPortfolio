@@ -21,14 +21,14 @@
 			fontFamily: 'var(--font-body)',
 			themeVariables: {
 				fontFamily: 'var(--font-body)',
-				primaryColor: '#e8ecf4',
-				primaryTextColor: '#1e2430',
-				primaryBorderColor: '#5c7095',
-				lineColor: '#5c7095',
-				secondaryColor: '#f4f5f7',
+				primaryColor: '#f3e6dc',
+				primaryTextColor: '#2a2622',
+				primaryBorderColor: '#5c6f95',
+				lineColor: '#5c6f95',
+				secondaryColor: '#f6f1e8',
 				tertiaryColor: '#ffffff',
-				clusterBkg: '#f4f5f7',
-				clusterBorder: '#d7d9de'
+				clusterBkg: '#f6f1e8',
+				clusterBorder: '#ddd5c8'
 			}
 		});
 

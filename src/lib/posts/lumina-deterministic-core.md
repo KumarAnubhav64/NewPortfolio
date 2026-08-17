@@ -41,7 +41,7 @@ flowchart TB
     Core --> Facts[Structured facts — verified numbers]
     Facts --> LLM[LLM — phrases only, low temperature]
     LLM --> Msg[Natural-language message]
-    style Core fill:#e8ecf4,stroke:#5c7095,stroke-width:2px
+    style Core fill:#e8ecf4,stroke:#5c6f95,stroke-width:2px
 ```
 
 ## What the deterministic core actually computes

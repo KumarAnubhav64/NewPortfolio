@@ -280,8 +280,8 @@
 		gap: 0.5rem;
 		padding: 0.7rem 1.25rem;
 		border-radius: var(--radius-lg);
-		border: 1.5px solid var(--color-cta);
-		background: var(--color-cta);
+		border: 1.5px solid var(--color-accent);
+		background: var(--color-accent);
 		color: #ffffff;
 		font-family: var(--font-body);
 		font-size: var(--text-sm);
@@ -291,8 +291,8 @@
 	}
 
 	.modal-link:hover {
-		background: #2a2d33;
-		border-color: #2a2d33;
+		background: var(--color-accent-dark);
+		border-color: var(--color-accent-dark);
 		transform: translateY(-1px);
 	}
 
