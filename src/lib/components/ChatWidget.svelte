@@ -241,12 +241,10 @@
 		overflow: hidden;
 		padding: 0;
 		transition: transform 0.3s var(--ease-out);
+		box-shadow: 0 6px 20px rgba(30, 36, 48, 0.14);
 	}
 
-	.chat-launcher-avatar {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+	.chat-launcher-icon {
 		display: block;
 	}
 
@@ -270,9 +268,9 @@
 		outline-offset: 3px;
 	}
 
-	.chat-launcher:focus-visible .chat-launcher-avatar {
+	.chat-launcher:focus-visible .chat-launcher-icon {
 		outline: 2px solid var(--color-accent);
-		outline-offset: 2px;
+		outline-offset: 3px;
 		border-radius: 50%;
 	}
 
@@ -711,6 +709,62 @@
 		}
 	}
 
+	/* ---------- Mobile ---------- */
+	@media (max-width: 640px) {
+		.chat-launcher {
+			right: 1.1rem;
+			bottom: calc(1.1rem + env(safe-area-inset-bottom, 0px));
+			width: 56px;
+			height: 56px;
+		}
+
+		.chat-panel {
+			right: 0.5rem;
+			left: 0.5rem;
+			bottom: calc(4.85rem + env(safe-area-inset-bottom, 0px));
+			width: auto;
+			height: calc(100vh - 5.35rem - env(safe-area-inset-bottom, 0px));
+			height: calc(100dvh - 5.35rem - env(safe-area-inset-bottom, 0px));
+			border-radius: 20px;
+		}
+
+		.chat-header {
+			padding: 0.85rem 1rem;
+		}
+
+		.chat-messages {
+			padding: 1rem 0.95rem;
+		}
+
+		.chat-input-row {
+			padding: 0.6rem 0.95rem 0.7rem;
+		}
+
+		/* 16px prevents iOS Safari from zooming in when the field is focused */
+		.chat-input {
+			font-size: 16px;
+			min-height: 34px;
+		}
+
+		.chat-send {
+			width: 42px;
+			height: 42px;
+		}
+
+		.mic-btn {
+			width: 38px;
+			height: 38px;
+		}
+
+		.msg {
+			max-width: 92%;
+		}
+
+		.cue-block {
+			max-width: 92%;
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.chat-panel,
 		.chat-launcher,
@@ -848,12 +902,23 @@
 			<path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
 		</svg>
 	{:else}
-		<img
-			src="/hero-portrait.png"
-			alt="Kumar Anubhav"
-			class="chat-launcher-avatar"
-			width="58"
-			height="58"
-		/>
+		<svg
+			class="chat-launcher-icon"
+			width="30"
+			height="30"
+			viewBox="0 0 24 24"
+			fill="none"
+			aria-hidden="true"
+		>
+			<path
+				d="M21 11.5c0 4.14-4.03 7.5-9 7.5-1.13 0-2.22-.16-3.22-.46L3 20l1.19-3.85C3.44 14.9 3 13.76 3 11.5 3 7.36 7.03 4 12 4s9 3.36 9 7.5z"
+				stroke="currentColor"
+				stroke-width="1.7"
+				stroke-linejoin="round"
+			/>
+			<circle cx="8.6" cy="11.5" r="1.35" fill="currentColor" />
+			<circle cx="12" cy="11.5" r="1.35" fill="currentColor" />
+			<circle cx="15.4" cy="11.5" r="1.35" fill="currentColor" />
+		</svg>
 	{/if}
 </button>
